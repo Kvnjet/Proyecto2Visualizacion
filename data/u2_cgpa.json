@@ -1,0 +1,29 @@
+{
+  "data": [
+    {
+      "CGPA": "0 - 1.99",
+      "Cantidad": 4,
+      "Color": "#F1B972"
+    },
+    {
+      "CGPA": "2.00 - 2.49",
+      "Cantidad": 2,
+      "Color": "#FED8B1"
+    },
+    {
+      "CGPA": "2.50 - 2.99",
+      "Cantidad": 4,
+      "Color": "#FDAE44"
+    },
+    {
+      "CGPA": "3.00 - 3.49",
+      "Cantidad": 43,
+      "Color": "#E77D22"
+    },
+    {
+      "CGPA": "3.50 - 4.00",
+      "Cantidad": 48,
+      "Color": "#D16002"
+    }
+  ]
+}

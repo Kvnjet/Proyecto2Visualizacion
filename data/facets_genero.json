@@ -1,0 +1,40 @@
+{
+  "data": [
+    {
+      "Genero": "Mujeres",
+      "Condicion": "Ansiedad",
+      "PctYes": 32.0,
+      "PctNo": 68.0
+    },
+    {
+      "Genero": "Mujeres",
+      "Condicion": "Depresion",
+      "PctYes": 38.7,
+      "PctNo": 61.3
+    },
+    {
+      "Genero": "Mujeres",
+      "Condicion": "Panico",
+      "PctYes": 33.3,
+      "PctNo": 66.7
+    },
+    {
+      "Genero": "Hombres",
+      "Condicion": "Ansiedad",
+      "PctYes": 38.5,
+      "PctNo": 61.5
+    },
+    {
+      "Genero": "Hombres",
+      "Condicion": "Depresion",
+      "PctYes": 23.1,
+      "PctNo": 76.9
+    },
+    {
+      "Genero": "Hombres",
+      "Condicion": "Panico",
+      "PctYes": 30.8,
+      "PctNo": 69.2
+    }
+  ]
+}

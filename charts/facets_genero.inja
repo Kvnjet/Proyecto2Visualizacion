@@ -1,0 +1,116 @@
+{# Gráfica de Facetas: Condiciones de Salud Mental por Género
+   Dos paneles: Mujeres | Hombres
+   3 barras por panel: Ansiedad, Depresión, Pánico (apiladas 100%) #}
+
+{% set totalW  = 700 %}
+{% set totalH  = 420 %}
+{% set padL    = 65  %}
+{% set padR    = 20  %}
+{% set padT    = 60  %}
+{% set padB    = 70  %}
+{% set gap     = 50  %}  {# espacio entre paneles #}
+{% set panelW  = (totalW - padL - padR - gap) / 2 %}
+{% set panelH  = totalH - padT - padB %}
+
+{% set cats      = ["Ansiedad","Depresion","Panico"] %}
+{% set catLabels = ["Ansiedad","Depresión","Pánico"] %}
+{% set generos   = ["Mujeres","Hombres"] %}
+
+<svg width="{{totalW}}" height="{{totalH}}" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title       { font-family: sans-serif; font-size: 14px; font-weight: bold; fill: #111; }
+    .panel-title { font-family: sans-serif; font-size: 13px; font-weight: bold; fill: #333; }
+    .tick-label  { font-family: sans-serif; font-size: 11px; fill: #555; }
+    .axis-line, .tick-line { stroke: #888; }
+    .axis-label  { font-family: sans-serif; font-size: 11px; fill: #555; }
+    .legend-text { font-family: sans-serif; font-size: 11px; fill: #333; }
+    .pct-label   { font-family: sans-serif; font-size: 10px; fill: white; font-weight: bold; }
+  </style>
+
+  <text class="title" x="{{totalW / 2}}" y="28" text-anchor="middle">
+    Condiciones de Salud Mental por Género
+  </text>
+
+  {# --- Panel 0: Mujeres --- #}
+  {% set panelX0 = padL %}
+  <g transform="translate({{panelX0}},{{padT}})">
+
+    <text class="panel-title" x="{{panelW / 2}}" y="-10" text-anchor="middle">Mujeres</text>
+
+    {% set x0 = scaleBand() | domain(cats) | range(0, panelW) | padding(0.3) %}
+    {% set y0 = scaleLinear() | domain([0, 100]) | range(panelH, 0) %}
+
+    <g transform="translate(0,{{panelH}})">
+      {{ call(axisBottom(x0) | tickValues(cats)) }}
+    </g>
+    <g>{{ call(axisLeft(y0) | tickValues([0,25,50,75,100]) | tickFormat("percent")) }}</g>
+
+    {% for d in data %}
+      {% if d.Genero == "Mujeres" %}
+        {% set bx = scale(x0, d.Condicion) %}
+        {% set bw = bandwidth(x0) %}
+
+        {# Segmento Yes (azul, arriba) #}
+        {% set hYes = panelH - scale(y0, d.PctYes) %}
+        <rect x="{{bx}}" y="{{scale(y0, d.PctYes)}}" width="{{bw}}" height="{{hYes}}"
+              fill="#2D68C4"/>
+        {% if d.PctYes > 8 %}
+          <text class="pct-label" text-anchor="middle"
+                x="{{bx + bw/2}}" y="{{scale(y0, d.PctYes) + hYes/2 + 4}}">{{d.PctYes}}%</text>
+        {% endif %}
+
+        {# Segmento No (amarillo, abajo) #}
+        <rect x="{{bx}}" y="0" width="{{bw}}" height="{{scale(y0, d.PctYes)}}"
+              fill="#F4C430"/>
+      {% endif %}
+    {% endfor %}
+
+    <text class="axis-label" text-anchor="middle"
+          x="{{panelW / 2}}" y="{{panelH + 55}}">Condición</text>
+  </g>
+
+  {# --- Panel 1: Hombres --- #}
+  {% set panelX1 = padL + panelW + gap %}
+  <g transform="translate({{panelX1}},{{padT}})">
+
+    <text class="panel-title" x="{{panelW / 2}}" y="-10" text-anchor="middle">Hombres</text>
+
+    {% set x1 = scaleBand() | domain(cats) | range(0, panelW) | padding(0.3) %}
+    {% set y1 = scaleLinear() | domain([0, 100]) | range(panelH, 0) %}
+
+    <g transform="translate(0,{{panelH}})">
+      {{ call(axisBottom(x1) | tickValues(cats)) }}
+    </g>
+    <g>{{ call(axisLeft(y1) | tickValues([0,25,50,75,100]) | tickFormat("percent")) }}</g>
+
+    {% for d in data %}
+      {% if d.Genero == "Hombres" %}
+        {% set bx = scale(x1, d.Condicion) %}
+        {% set bw = bandwidth(x1) %}
+
+        {% set hYes = panelH - scale(y1, d.PctYes) %}
+        <rect x="{{bx}}" y="{{scale(y1, d.PctYes)}}" width="{{bw}}" height="{{hYes}}"
+              fill="#2D68C4"/>
+        {% if d.PctYes > 8 %}
+          <text class="pct-label" text-anchor="middle"
+                x="{{bx + bw/2}}" y="{{scale(y1, d.PctYes) + hYes/2 + 4}}">{{d.PctYes}}%</text>
+        {% endif %}
+
+        <rect x="{{bx}}" y="0" width="{{bw}}" height="{{scale(y1, d.PctYes)}}"
+              fill="#F4C430"/>
+      {% endif %}
+    {% endfor %}
+
+    <text class="axis-label" text-anchor="middle"
+          x="{{panelW / 2}}" y="{{panelH + 55}}">Condición</text>
+  </g>
+
+  {# Leyenda global #}
+  {% set legX = padL %}
+  {% set legY = totalH - 20 %}
+  <rect x="{{legX}}"      y="{{legY - 11}}" width="12" height="12" fill="#F4C430"/>
+  <text class="legend-text" x="{{legX + 16}}" y="{{legY}}">No</text>
+  <rect x="{{legX + 50}}" y="{{legY - 11}}" width="12" height="12" fill="#2D68C4"/>
+  <text class="legend-text" x="{{legX + 66}}" y="{{legY}}">Sí</text>
+  <text class="legend-text" x="{{legX + 90}}" y="{{legY}}" font-style="italic">Presenta la condición</text>
+</svg>

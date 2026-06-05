@@ -1,0 +1,63 @@
+{% set margin = obj("top", 50, "right", 110, "bottom", 70, "left", 70) %}
+{% set width  = 500 - margin.left - margin.right %}
+{% set height = 400 - margin.top  - margin.bottom %}
+
+{% set cats = ["Female","Male"] %}
+{% set x = scaleBand() | domain(cats) | range(0, width) | padding(0.4) %}
+{% set y = scaleLinear() | domain([0, 100]) | range(height, 0) %}
+
+<svg width="{{width + margin.left + margin.right}}"
+     height="{{height + margin.top + margin.bottom}}"
+     xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .tick-label  { font-family: sans-serif; font-size: 12px; fill: #333; }
+    .axis-line, .tick-line { stroke: #666; }
+    .title       { font-family: sans-serif; font-size: 13px; font-weight: bold; fill: #111; }
+    .axis-label  { font-family: sans-serif; font-size: 12px; fill: #555; }
+    .legend-text { font-family: sans-serif; font-size: 12px; fill: #333; }
+    .pct-label   { font-family: sans-serif; font-size: 12px; fill: white; font-weight: bold; }
+  </style>
+
+  <g transform="translate({{margin.left}},{{margin.top}})">
+
+    <text class="title" x="{{width / 2}}" y="-22" text-anchor="middle">
+      Proporción de Depresión por Género
+    </text>
+
+    <g transform="translate(0,{{height}})">
+      {{ call(axisBottom(x) | tickValues(cats)) }}
+    </g>
+    {# Eje Y en porcentaje 0-100 #}
+    <g>{{ call(axisLeft(y) | tickValues([0,25,50,75,100]) | tickFormat("percent")) }}</g>
+
+    {% for d in data %}
+      {% set bx = scale(x, d.Genero) %}
+      {% set bw = bandwidth(x) %}
+
+      {# Segmento Yes (azul, abajo) #}
+      {% set yYes = scale(y, d.PctYes) %}
+      {% set hYes = height - scale(y, d.PctYes) %}
+      <rect x="{{bx}}" y="{{yYes}}" width="{{bw}}" height="{{hYes}}" fill="#2D68C4"/>
+
+      {# Etiqueta dentro del segmento Yes #}
+      <text class="pct-label" text-anchor="middle"
+            x="{{bx + bw/2}}" y="{{yYes + hYes/2 + 5}}">{{d.PctYes}}%</text>
+
+      {# Segmento No (amarillo, arriba) #}
+      {% set hNo = height - scale(y, d.PctNo) %}
+      <rect x="{{bx}}" y="0" width="{{bw}}" height="{{scale(y, d.PctYes)}}" fill="#F4C430"/>
+    {% endfor %}
+
+    <text class="axis-label" text-anchor="middle"
+          x="{{width / 2}}" y="{{height + 50}}">Género</text>
+    <text class="axis-label" text-anchor="middle"
+          transform="rotate(-90)" x="{{-height / 2}}" y="-52">Porcentaje</text>
+
+    {# Leyenda #}
+    <rect x="{{width + 10}}" y="0"  width="14" height="14" fill="#F4C430"/>
+    <text class="legend-text" x="{{width + 28}}" y="12">No</text>
+    <rect x="{{width + 10}}" y="22" width="14" height="14" fill="#2D68C4"/>
+    <text class="legend-text" x="{{width + 28}}" y="34">Yes</text>
+    <text class="legend-text" x="{{width + 10}}" y="-8" font-weight="bold">Depresión</text>
+  </g>
+</svg>

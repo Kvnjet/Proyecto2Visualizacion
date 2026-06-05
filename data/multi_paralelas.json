@@ -1,0 +1,1014 @@
+{
+  "data": [
+    {
+      "Edad": 18,
+      "CGPA_val": 4,
+      "Depresion": 1,
+      "Ansiedad": 0,
+      "Panico": 1,
+      "Tratamiento": 0,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 21,
+      "CGPA_val": 4,
+      "Depresion": 0,
+      "Ansiedad": 1,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 19,
+      "CGPA_val": 4,
+      "Depresion": 1,
+      "Ansiedad": 1,
+      "Panico": 1,
+      "Tratamiento": 0,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 22,
+      "CGPA_val": 4,
+      "Depresion": 1,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 23,
+      "CGPA_val": 4,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 19,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 1,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 23,
+      "CGPA_val": 5,
+      "Depresion": 1,
+      "Ansiedad": 0,
+      "Panico": 1,
+      "Tratamiento": 0,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 18,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 1,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 19,
+      "CGPA_val": 3,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 18,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 1,
+      "Panico": 1,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 20,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 24,
+      "CGPA_val": 5,
+      "Depresion": 1,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 18,
+      "CGPA_val": 4,
+      "Depresion": 1,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 19,
+      "CGPA_val": 4,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 18,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 1,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 24,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 24,
+      "CGPA_val": 4,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 24,
+      "CGPA_val": 4,
+      "Depresion": 1,
+      "Ansiedad": 1,
+      "Panico": 1,
+      "Tratamiento": 0,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 20,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 1,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 18,
+      "CGPA_val": 5,
+      "Depresion": 1,
+      "Ansiedad": 1,
+      "Panico": 1,
+      "Tratamiento": 0,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 19,
+      "CGPA_val": 4,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 1,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 18,
+      "CGPA_val": 4,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 24,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 24,
+      "CGPA_val": 4,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 23,
+      "CGPA_val": 5,
+      "Depresion": 1,
+      "Ansiedad": 1,
+      "Panico": 1,
+      "Tratamiento": 0,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 18,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 19,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 18,
+      "CGPA_val": 4,
+      "Depresion": 1,
+      "Ansiedad": 1,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 24,
+      "CGPA_val": 5,
+      "Depresion": 1,
+      "Ansiedad": 1,
+      "Panico": 1,
+      "Tratamiento": 1,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 24,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 23,
+      "CGPA_val": 4,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 18,
+      "CGPA_val": 4,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 19,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 1,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 18,
+      "CGPA_val": 5,
+      "Depresion": 1,
+      "Ansiedad": 1,
+      "Panico": 0,
+      "Tratamiento": 1,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 19,
+      "CGPA_val": 4,
+      "Depresion": 1,
+      "Ansiedad": 1,
+      "Panico": 1,
+      "Tratamiento": 0,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 18,
+      "CGPA_val": 2,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 18,
+      "CGPA_val": 4,
+      "Depresion": 1,
+      "Ansiedad": 1,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 19,
+      "CGPA_val": 3,
+      "Depresion": 1,
+      "Ansiedad": 1,
+      "Panico": 1,
+      "Tratamiento": 0,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 18,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 24,
+      "CGPA_val": 3,
+      "Depresion": 1,
+      "Ansiedad": 0,
+      "Panico": 1,
+      "Tratamiento": 1,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 24,
+      "CGPA_val": 4,
+      "Depresion": 0,
+      "Ansiedad": 1,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 22,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 20,
+      "CGPA_val": 4,
+      "Depresion": 1,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 20,
+      "CGPA_val": 1,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 23,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 1,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 18,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 1,
+      "Panico": 1,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 19,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 1,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 18,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 24,
+      "CGPA_val": 4,
+      "Depresion": 1,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 24,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 1,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 23,
+      "CGPA_val": 3,
+      "Depresion": 1,
+      "Ansiedad": 0,
+      "Panico": 1,
+      "Tratamiento": 1,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 18,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 1,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 19,
+      "CGPA_val": 4,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 20,
+      "CGPA_val": 4,
+      "Depresion": 1,
+      "Ansiedad": 1,
+      "Panico": 1,
+      "Tratamiento": 0,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 19,
+      "CGPA_val": 5,
+      "Depresion": 1,
+      "Ansiedad": 0,
+      "Panico": 1,
+      "Tratamiento": 1,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 21,
+      "CGPA_val": 4,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 23,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 20,
+      "CGPA_val": 4,
+      "Depresion": 1,
+      "Ansiedad": 1,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 18,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 23,
+      "CGPA_val": 4,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 18,
+      "CGPA_val": 4,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 1,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 19,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 18,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 1,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 24,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 1,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 24,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 23,
+      "CGPA_val": 5,
+      "Depresion": 1,
+      "Ansiedad": 1,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 18,
+      "CGPA_val": 4,
+      "Depresion": 0,
+      "Ansiedad": 1,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 19,
+      "CGPA_val": 4,
+      "Depresion": 1,
+      "Ansiedad": 0,
+      "Panico": 1,
+      "Tratamiento": 0,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 18,
+      "CGPA_val": 5,
+      "Depresion": 1,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 24,
+      "CGPA_val": 4,
+      "Depresion": 0,
+      "Ansiedad": 1,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 24,
+      "CGPA_val": 4,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 18,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 1,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 19,
+      "CGPA_val": 4,
+      "Depresion": 1,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 18,
+      "CGPA_val": 1,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 24,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 1,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 24,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 1,
+      "Panico": 1,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 23,
+      "CGPA_val": 4,
+      "Depresion": 1,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 18,
+      "CGPA_val": 4,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 1,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 19,
+      "CGPA_val": 1,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 18,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 24,
+      "CGPA_val": 5,
+      "Depresion": 1,
+      "Ansiedad": 1,
+      "Panico": 1,
+      "Tratamiento": 0,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 24,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 19,
+      "CGPA_val": 4,
+      "Depresion": 1,
+      "Ansiedad": 1,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 19,
+      "CGPA_val": 4,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 23,
+      "CGPA_val": 4,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 18,
+      "CGPA_val": 5,
+      "Depresion": 1,
+      "Ansiedad": 1,
+      "Panico": 0,
+      "Tratamiento": 1,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 19,
+      "CGPA_val": 4,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 18,
+      "CGPA_val": 5,
+      "Depresion": 1,
+      "Ansiedad": 1,
+      "Panico": 1,
+      "Tratamiento": 0,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 24,
+      "CGPA_val": 4,
+      "Depresion": 0,
+      "Ansiedad": 1,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 24,
+      "CGPA_val": 2,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 1,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 23,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 1,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 18,
+      "CGPA_val": 4,
+      "Depresion": 0,
+      "Ansiedad": 1,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 19,
+      "CGPA_val": 4,
+      "Depresion": 1,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 18,
+      "CGPA_val": 4,
+      "Depresion": 1,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 24,
+      "CGPA_val": 1,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 1,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 18,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 21,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 1,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 18,
+      "CGPA_val": 4,
+      "Depresion": 1,
+      "Ansiedad": 1,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 19,
+      "CGPA_val": 5,
+      "Depresion": 1,
+      "Ansiedad": 0,
+      "Panico": 1,
+      "Tratamiento": 0,
+      "Color": "#2D68C4",
+      "Opacity": "0.7"
+    },
+    {
+      "Edad": 23,
+      "CGPA_val": 5,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    },
+    {
+      "Edad": 20,
+      "CGPA_val": 4,
+      "Depresion": 0,
+      "Ansiedad": 0,
+      "Panico": 0,
+      "Tratamiento": 0,
+      "Color": "#F4C430",
+      "Opacity": "0.4"
+    }
+  ]
+}

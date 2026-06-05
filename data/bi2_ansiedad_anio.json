@@ -1,0 +1,24 @@
+{
+  "data": [
+    {
+      "Anio": "Año 1",
+      "CantNo": 29,
+      "CantYes": 14
+    },
+    {
+      "Anio": "Año 2",
+      "CantNo": 16,
+      "CantYes": 10
+    },
+    {
+      "Anio": "Año 3",
+      "CantNo": 16,
+      "CantYes": 8
+    },
+    {
+      "Anio": "Año 4",
+      "CantNo": 6,
+      "CantYes": 2
+    }
+  ]
+}

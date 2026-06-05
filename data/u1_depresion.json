@@ -1,0 +1,14 @@
+{
+  "data": [
+    {
+      "Depresion": "No",
+      "Cantidad": 66,
+      "Etiqueta": "65.3%"
+    },
+    {
+      "Depresion": "Si",
+      "Cantidad": 35,
+      "Etiqueta": "34.7%"
+    }
+  ]
+}

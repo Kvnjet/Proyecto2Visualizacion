@@ -1,0 +1,29 @@
+{
+  "data": [
+    {
+      "CGPA": "0 - 1.99",
+      "CantNo": 4,
+      "CantYes": 0
+    },
+    {
+      "CGPA": "2.00 - 2.49",
+      "CantNo": 2,
+      "CantYes": 0
+    },
+    {
+      "CGPA": "2.50 - 2.99",
+      "CantNo": 1,
+      "CantYes": 3
+    },
+    {
+      "CGPA": "3.00 - 3.49",
+      "CantNo": 24,
+      "CantYes": 19
+    },
+    {
+      "CGPA": "3.50 - 4.00",
+      "CantNo": 35,
+      "CantYes": 13
+    }
+  ]
+}

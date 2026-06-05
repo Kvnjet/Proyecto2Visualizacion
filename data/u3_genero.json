@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "Genero": "Female",
+      "Cantidad": 75,
+      "Porcentaje": 74.3,
+      "Color": "#DC9DDD"
+    },
+    {
+      "Genero": "Male",
+      "Cantidad": 26,
+      "Porcentaje": 25.7,
+      "Color": "#4682B4"
+    }
+  ]
+}

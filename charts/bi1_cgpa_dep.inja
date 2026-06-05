@@ -1,0 +1,62 @@
+{% set margin = obj("top", 50, "right", 110, "bottom", 85, "left", 70) %}
+{% set width  = 600 - margin.left - margin.right %}
+{% set height = 400 - margin.top  - margin.bottom %}
+
+{% set cats = ["0 - 1.99","2.00 - 2.49","2.50 - 2.99","3.00 - 3.49","3.50 - 4.00"] %}
+{% set x = scaleBand() | domain(cats) | range(0, width) | padding(0.25) %}
+{% set y = scaleLinear() | domain([0, 40]) | range(height, 0) %}
+
+<svg width="{{width + margin.left + margin.right}}"
+     height="{{height + margin.top + margin.bottom}}"
+     xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .tick-label  { font-family: sans-serif; font-size: 11px; fill: #333; }
+    .axis-line, .tick-line { stroke: #666; }
+    .title       { font-family: sans-serif; font-size: 13px; font-weight: bold; fill: #111; }
+    .axis-label  { font-family: sans-serif; font-size: 12px; fill: #555; }
+    .legend-text { font-family: sans-serif; font-size: 12px; fill: #333; }
+  </style>
+
+  <g transform="translate({{margin.left}},{{margin.top}})">
+
+    <text class="title" x="{{width / 2}}" y="-22" text-anchor="middle">
+      Relación entre CGPA y Depresión
+    </text>
+
+    <g transform="translate(0,{{height}})">
+      {{ call(axisBottom(x) | tickValues(cats) | tickAngle(25)) }}
+    </g>
+    <g>{{ call(axisLeft(y) | tickCount(5)) }}</g>
+
+    {% for d in data %}
+      {% set groupX = scale(x, d.CGPA) %}
+      {% set bw = bandwidth(x) / 2 %}
+
+      {# Barra No (amarillo) #}
+      {% set byNo = scale(y, d.CantNo) %}
+      {% set bhNo = height - scale(y, d.CantNo) %}
+      <rect x="{{groupX}}" y="{{byNo}}"
+            width="{{bw - 1}}" height="{{bhNo}}"
+            fill="#F4C430"/>
+
+      {# Barra Yes (azul) #}
+      {% set byYes = scale(y, d.CantYes) %}
+      {% set bhYes = height - scale(y, d.CantYes) %}
+      <rect x="{{groupX + bw}}" y="{{byYes}}"
+            width="{{bw - 1}}" height="{{bhYes}}"
+            fill="#2D68C4"/>
+    {% endfor %}
+
+    <text class="axis-label" text-anchor="middle"
+          x="{{width / 2}}" y="{{height + 72}}">Rango de CGPA</text>
+    <text class="axis-label" text-anchor="middle"
+          transform="rotate(-90)" x="{{-height / 2}}" y="-52">Número de Estudiantes</text>
+
+    {# Leyenda #}
+    <rect x="{{width + 10}}" y="0"  width="14" height="14" fill="#F4C430"/>
+    <text class="legend-text" x="{{width + 28}}" y="12">No</text>
+    <rect x="{{width + 10}}" y="22" width="14" height="14" fill="#2D68C4"/>
+    <text class="legend-text" x="{{width + 28}}" y="34">Yes</text>
+    <text class="legend-text" x="{{width + 10}}" y="-8" font-weight="bold">Depresión</text>
+  </g>
+</svg>

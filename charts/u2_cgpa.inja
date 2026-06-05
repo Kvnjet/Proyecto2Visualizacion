@@ -1,0 +1,44 @@
+{% set margin = obj("top", 50, "right", 30, "bottom", 80, "left", 70) %}
+{% set width  = 560 - margin.left - margin.right %}
+{% set height = 400 - margin.top  - margin.bottom %}
+
+{% set cats = ["0 - 1.99","2.00 - 2.49","2.50 - 2.99","3.00 - 3.49","3.50 - 4.00"] %}
+{% set x = scaleBand() | domain(cats) | range(0, width) | padding(0.25) %}
+{% set y = scaleLinear() | domain([0, 55]) | range(height, 0) %}
+
+<svg width="{{width + margin.left + margin.right}}"
+     height="{{height + margin.top + margin.bottom}}"
+     xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .tick-label { font-family: sans-serif; font-size: 11px; fill: #333; }
+    .axis-line, .tick-line { stroke: #666; }
+    .title { font-family: sans-serif; font-size: 13px; font-weight: bold; fill: #111; }
+    .axis-label { font-family: sans-serif; font-size: 12px; fill: #555; }
+  </style>
+
+  <g transform="translate({{margin.left}},{{margin.top}})">
+
+    <text class="title" x="{{width / 2}}" y="-20" text-anchor="middle">
+      Distribución de Estudiantes por Rendimiento Académico (CGPA)
+    </text>
+
+    <g transform="translate(0,{{height}})">
+      {{ call(axisBottom(x) | tickValues(cats) | tickAngle(25)) }}
+    </g>
+    <g>{{ call(axisLeft(y) | tickCount(6)) }}</g>
+
+    {% for d in data %}
+      {% set bx = scale(x, d.CGPA) %}
+      {% set by = scale(y, d.Cantidad) %}
+      {% set bw = bandwidth(x) %}
+      {% set bh = height - scale(y, d.Cantidad) %}
+      <rect x="{{bx}}" y="{{by}}" width="{{bw}}" height="{{bh}}"
+            fill="{{d.Color}}"/>
+    {% endfor %}
+
+    <text class="axis-label" text-anchor="middle"
+          x="{{width / 2}}" y="{{height + 68}}">Rango de CGPA</text>
+    <text class="axis-label" text-anchor="middle"
+          transform="rotate(-90)" x="{{-height / 2}}" y="-52">Número de Estudiantes</text>
+  </g>
+</svg>
