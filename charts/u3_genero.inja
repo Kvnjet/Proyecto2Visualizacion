@@ -1,11 +1,8 @@
 {% set totalW = 480 %}
-{% set totalH = 400 %}
+{% set totalH = 420 %}
 {% set cx = 240 %}
-{% set cy = 210 %}
+{% set cy = 215 %}
 {% set r  = 140 %}
-{% set pieGen = shapePie() | value("Cantidad") | sortValues(false) %}
-{% set arcGen = shapeArc() | innerRadius(0) | outerRadius(r) %}
-{% set slices = pieGen | pie(data) %}
 <svg width="{{totalW}}" height="{{totalH}}" xmlns="http://www.w3.org/2000/svg">
   <style>
     .title       { font-family: sans-serif; font-size: 14px; font-weight: bold; fill: #111; }
@@ -13,12 +10,10 @@
   </style>
   <text class="title" x="{{cx}}" y="28" text-anchor="middle">Distribucion de Estudiantes por Genero</text>
   <g transform="translate({{cx}},{{cy}})">
-    {% for slice in slices %}
-      <path d="{{ arcGen | arc(slice) }}" fill="{{ data[loop.index0].Color }}" stroke="white" stroke-width="2"/>
+    {% for d in data %}
+      <path d="{{d.PathD}}" fill="{{d.Color}}" stroke="white" stroke-width="2"/>
+      <text class="slice-label" x="{{d.LabelX}}" y="{{d.LabelY}}"    text-anchor="middle">{{d.Genero}}</text>
+      <text class="slice-label" x="{{d.LabelX}}" y="{{d.LabelY2}}"   text-anchor="middle">{{d.Porcentaje}}%</text>
     {% endfor %}
-    <text class="slice-label" x="45"  y="22"  text-anchor="middle">{{ data[0].Genero }}</text>
-    <text class="slice-label" x="45"  y="40"  text-anchor="middle">{{ data[0].Porcentaje }}%</text>
-    <text class="slice-label" x="-35" y="-63" text-anchor="middle">{{ data[1].Genero }}</text>
-    <text class="slice-label" x="-35" y="-45" text-anchor="middle">{{ data[1].Porcentaje }}%</text>
   </g>
 </svg>

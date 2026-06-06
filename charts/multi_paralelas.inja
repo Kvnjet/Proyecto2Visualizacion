@@ -77,4 +77,14 @@
     <line x1="{{xTra - 4}}" y1="{{ySi}}" x2="{{xTra + 4}}" y2="{{ySi}}" stroke="#555"/>
     <text class="tick-lbl" x="{{xTra - 7}}" y="{{ySi + 4}}" text-anchor="end">Si</text>
     {% set legY = chartH + 30 %}
-    <line x1="{{chartW - 150}}" y1="{{legY}}" x2="{{chartW - 130}}" y2="{{legY}}"
+    <line x1="{{chartW - 150}}" y1="{{legY}}" x2="{{chartW - 130}}" y2="{{legY}}" stroke="#2D68C4" stroke-width="2"/>
+    <text class="legend-txt" x="{{chartW - 125}}" y="{{legY + 4}}">Con depresion</text>
+    <line x1="{{chartW - 30}}" y1="{{legY}}" x2="{{chartW - 10}}" y2="{{legY}}" stroke="#F4C430" stroke-width="2"/>
+    <text class="legend-txt" x="{{chartW - 5}}" y="{{legY + 4}}">Sin depresion</text>
+  </g>
+</svg>
+    <text class="legend-txt" x="{{chartW - 125}}" y="{{legY + 4}}">Con depresion</text>
+    <line x1="{{chartW - 30}}" y1="{{legY}}" x2="{{chartW - 10}}" y2="{{legY}}" stroke="#F4C430" stroke-width="2"/>
+    <text class="legend-txt" x="{{chartW - 5}}" y="{{legY + 4}}">Sin depresion</text>
+  </g>
+</svg>
