@@ -1,5 +1,7 @@
 
 
+
+
 <svg width="560"
      height="400"
      xmlns="http://www.w3.org/2000/svg">
@@ -73,20 +75,35 @@
   </g>
 </g>
 
-      <rect x="11.5" y="250.36363636363637" width="69.0" height="19.636363636363626"
+      <rect x="11.5"
+            y="250.36363636363637"
+            width="69.0"
+            height="19.636363636363626"
             fill="#F1B972"/>
-      <rect x="103.5" y="260.1818181818182" width="69.0" height="9.818181818181813"
+      <rect x="103.5"
+            y="260.1818181818182"
+            width="69.0"
+            height="9.818181818181813"
             fill="#FED8B1"/>
-      <rect x="195.5" y="250.36363636363637" width="69.0" height="19.636363636363626"
+      <rect x="195.5"
+            y="250.36363636363637"
+            width="69.0"
+            height="19.636363636363626"
             fill="#FDAE44"/>
-      <rect x="287.5" y="58.90909090909091" width="69.0" height="211.0909090909091"
+      <rect x="287.5"
+            y="58.90909090909091"
+            width="69.0"
+            height="211.0909090909091"
             fill="#E77D22"/>
-      <rect x="379.5" y="34.363636363636374" width="69.0" height="235.63636363636363"
+      <rect x="379.5"
+            y="34.363636363636374"
+            width="69.0"
+            height="235.63636363636363"
             fill="#D16002"/>
 
     <text class="axis-label" text-anchor="middle"
           x="230.0" y="338">Rango de CGPA</text>
     <text class="axis-label" text-anchor="middle"
-          transform="rotate(-90)" x="135.0" y="-52">Número de Estudiantes</text>
+          transform="rotate(-90)" x="-135.0" y="-52" style=" #555; : red">Número de Estudiantes</text>
   </g>
 </svg>

@@ -4,7 +4,6 @@
       "Genero": "Female",
       "Porcentaje": 74.3,
       "Color": "#DC9DDD",
-      "PathD": "M 0 0 L 0.0 -140.0 A 140 140 0 1 1 -139.86 6.16 Z",
       "LabelX": 62.7,
       "LabelY": 52.0,
       "LabelY2": 70.0
@@ -13,7 +12,6 @@
       "Genero": "Male",
       "Porcentaje": 25.7,
       "Color": "#4682B4",
-      "PathD": "M 0 0 L -139.86 6.16 A 140 140 0 0 1 -0.0 -140.0 Z",
       "LabelX": -62.7,
       "LabelY": -68.0,
       "LabelY2": -50.0

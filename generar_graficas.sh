@@ -47,6 +47,10 @@ echo "  [OK] multi_paralelas.svg"
 $INJAX $DATA/facets_genero.json   $CHARTS/facets_genero.inja   $CHARTS/facets_genero.svg
 echo "  [OK] facets_genero.svg"
 
+# Página Web
+$INJAX $DATA/index.json           $CHARTS/index.inja           index.html
+echo "  [OK] index.html"
+
 echo ""
 echo "Listo. SVGs generados en: $CHARTS/"
 ls $CHARTS/*.svg
