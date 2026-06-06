@@ -1,10 +1,18 @@
+{# set the dimensions and margins of the graph #}
 {% set margin = obj("top", 50, "right", 30, "bottom", 80, "left", 70) %}
 {% set width  = 560 - margin.left - margin.right %}
 {% set height = 400 - margin.top  - margin.bottom %}
 
-{% set cats = ["0 - 1.99","2.00 - 2.49","2.50 - 2.99","3.00 - 3.49","3.50 - 4.00"] %}
-{% set x = scaleBand() | domain(cats) | range(0, width) | padding(0.25) %}
-{% set y = scaleLinear() | domain([0, 55]) | range(height, 0) %}
+{% set cats = map(data, "CGPA") %}
+
+{% set x = scaleBand()
+      | domain(cats)
+      | range(0, width)
+      | padding(0.25) %}
+
+{% set y = scaleLinear()
+      | domain([0, 55])
+      | range(height, 0) %}
 
 <svg width="{{width + margin.left + margin.right}}"
      height="{{height + margin.top + margin.bottom}}"
@@ -28,17 +36,16 @@
     <g>{{ call(axisLeft(y) | tickCount(6)) }}</g>
 
     {% for d in data %}
-      {% set bx = scale(x, d.CGPA) %}
-      {% set by = scale(y, d.Cantidad) %}
-      {% set bw = bandwidth(x) %}
-      {% set bh = height - scale(y, d.Cantidad) %}
-      <rect x="{{bx}}" y="{{by}}" width="{{bw}}" height="{{bh}}"
-            fill="{{d.Color}}"/>
+      <rect x="{{ scale(x, d.CGPA) }}"
+            y="{{ scale(y, d.Cantidad) }}"
+            width="{{ bandwidth(x) }}"
+            height="{{ height - scale(y, d.Cantidad) }}"
+            fill="{{ d.Color }}"/>
     {% endfor %}
 
     <text class="axis-label" text-anchor="middle"
           x="{{width / 2}}" y="{{height + 68}}">Rango de CGPA</text>
     <text class="axis-label" text-anchor="middle"
-          transform="rotate(-90)" x="{{-height / 2}}" y="-52">Número de Estudiantes</text>
+          transform="rotate(-90)" x="{{0 - height / 2}}" y="-52" style=" #555; : red">Número de Estudiantes</text>
   </g>
 </svg>

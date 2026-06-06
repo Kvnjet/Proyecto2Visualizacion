@@ -1,0 +1,89 @@
+{
+  "titulo": "La Silenciosa Crisis: Salud Mental en Estudiantes Universitarios",
+  "subtitulo": "Análisis de variables relacionadas con depresión, ansiedad y rendimiento académico",
+  "autores": "Mariana Navarro, Kevin Espinoza",
+  "fecha": "2026-04-12",
+  "introduccion": "Este proyecto analiza datos de salud mental en estudiantes universitarios, explorando la relación entre variables académicas y psicológicas como la depresión, la ansiedad, el rendimiento académico (CGPA) y el género. El conjunto de datos proviene de una encuesta aplicada a estudiantes e incluye información sobre su estado de salud mental reportado, su promedio acumulado y características demográficas básicas.",
+  "secciones": [
+    {
+      "id": "univariables",
+      "titulo": "Análisis Univariable",
+      "graficas": [
+        {
+          "archivo": "charts/u1_depresion.svg",
+          "titulo": "Distribución de Depresión",
+          "figura": 1,
+          "caption": "Distribución de estudiantes según presencia de depresión.",
+          "analisis": "La mayoría de los estudiantes en la muestra no reportan depresión. Sin embargo, una proporción significativa sí la presenta, lo que evidencia la relevancia del tema en el contexto universitario."
+        },
+        {
+          "archivo": "charts/u2_cgpa.svg",
+          "titulo": "Distribución de CGPA",
+          "figura": 2,
+          "caption": "Distribución de estudiantes por rango de CGPA.",
+          "analisis": "El rendimiento académico se concentra mayoritariamente en los rangos superiores (3.00–4.00), lo que indica que la muestra está compuesta principalmente por estudiantes con buen desempeño académico."
+        },
+        {
+          "archivo": "charts/u3_genero.svg",
+          "titulo": "Distribución por Género",
+          "figura": 3,
+          "caption": "Distribución de estudiantes por género.",
+          "analisis": "La muestra presenta una marcada predominancia femenina, con aproximadamente tres cuartas partes de los estudiantes identificados como mujeres."
+        }
+      ]
+    },
+    {
+      "id": "bivariables",
+      "titulo": "Análisis Bivariable",
+      "graficas": [
+        {
+          "archivo": "charts/bi1_cgpa_dep.svg",
+          "titulo": "CGPA y Depresión",
+          "figura": 4,
+          "caption": "Relación entre rango de CGPA y presencia de depresión.",
+          "analisis": "Al cruzar el rendimiento académico con la depresión, se observa que los estudiantes con CGPA alto (3.00–4.00) concentran tanto las mayores cantidades con depresión como sin ella, lo cual es esperable dado que ese rango agrupa la mayor parte de la muestra."
+        },
+        {
+          "archivo": "charts/bi2_ansiedad_anio.svg",
+          "titulo": "Ansiedad y Año Académico",
+          "figura": 5,
+          "caption": "Niveles de ansiedad según año académico.",
+          "analisis": "Se analiza cómo varía la ansiedad reportada a lo largo de los distintos años de la carrera universitaria, permitiendo identificar momentos de mayor vulnerabilidad en el recorrido académico."
+        },
+        {
+          "archivo": "charts/bi3_dep_genero.svg",
+          "titulo": "Depresión y Género",
+          "figura": 6,
+          "caption": "Relación entre depresión y género de los estudiantes.",
+          "analisis": "La relación entre género y depresión muestra diferencias entre grupos, lo que sugiere que el género puede ser un factor relevante en la salud mental de los estudiantes universitarios."
+        }
+      ]
+    },
+    {
+      "id": "multivariable",
+      "titulo": "Análisis Multivariable",
+      "graficas": [
+        {
+          "archivo": "charts/multi_paralelas.svg",
+          "titulo": "Coordenadas Paralelas",
+          "figura": 7,
+          "caption": "Visualización multivariable mediante coordenadas paralelas.",
+          "analisis": "La visualización de coordenadas paralelas permite observar simultáneamente múltiples variables por estudiante, facilitando la identificación de patrones entre CGPA, ansiedad, depresión y otras dimensiones del dataset."
+        }
+      ]
+    },
+    {
+      "id": "facetas",
+      "titulo": "Análisis por Facetas",
+      "graficas": [
+        {
+          "archivo": "charts/facets_genero.svg",
+          "titulo": "Distribución por Género (Facetas)",
+          "figura": 8,
+          "caption": "Distribución de variables por género mediante facetas.",
+          "analisis": "La visualización por facetas desglosa la distribución de variables separando los datos por género, permitiendo comparar directamente los patrones entre estudiantes masculinos y femeninos."
+        }
+      ]
+    }
+  ]
+}
