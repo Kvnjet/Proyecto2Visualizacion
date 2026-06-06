@@ -1,4 +1,30 @@
-{% set totalW = 760 %}
+python3 << 'PYEOF'
+u3 = """{% set totalW = 480 %}
+{% set totalH = 400 %}
+{% set cx = 240 %}
+{% set cy = 210 %}
+{% set r  = 140 %}
+{% set pieGen = shapePie() | value("Cantidad") | sortValues(false) %}
+{% set arcGen = shapeArc() | innerRadius(0) | outerRadius(r) %}
+{% set slices = pieGen | pie(data) %}
+<svg width="{{totalW}}" height="{{totalH}}" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title       { font-family: sans-serif; font-size: 14px; font-weight: bold; fill: #111; }
+    .slice-label { font-family: sans-serif; font-size: 13px; fill: white; font-weight: bold; }
+  </style>
+  <text class="title" x="{{cx}}" y="28" text-anchor="middle">Distribucion de Estudiantes por Genero</text>
+  <g transform="translate({{cx}},{{cy}})">
+    {% for slice in slices %}
+      <path d="{{ arcGen | arc(slice) }}" fill="{{ data[loop.index0].Color }}" stroke="white" stroke-width="2"/>
+    {% endfor %}
+    <text class="slice-label" x="45"  y="22"  text-anchor="middle">{{ data[0].Genero }}</text>
+    <text class="slice-label" x="45"  y="40"  text-anchor="middle">{{ data[0].Porcentaje }}%</text>
+    <text class="slice-label" x="-35" y="-63" text-anchor="middle">{{ data[1].Genero }}</text>
+    <text class="slice-label" x="-35" y="-45" text-anchor="middle">{{ data[1].Porcentaje }}%</text>
+  </g>
+</svg>"""
+
+multi = """{% set totalW = 760 %}
 {% set totalH = 440 %}
 {% set padL   = 60  %}
 {% set padT   = 60  %}
@@ -82,4 +108,13 @@
     <line x1="{{chartW - 30}}" y1="{{legY}}" x2="{{chartW - 10}}" y2="{{legY}}" stroke="#F4C430" stroke-width="2"/>
     <text class="legend-txt" x="{{chartW - 5}}" y="{{legY + 4}}">Sin depresion</text>
   </g>
-</svg>
+</svg>"""
+
+with open("charts/u3_genero.inja", "w") as f:
+    f.write(u3)
+print("OK u3")
+
+with open("charts/multi_paralelas.inja", "w") as f:
+    f.write(multi)
+print("OK multi")
+PYEOF
