@@ -27,24 +27,24 @@
     <g transform="translate(0,{{height}})">
       {{ call(axisBottom(x) | tickValues(cats)) }}
     </g>
-    {# Eje Y en porcentaje 0-100 #}
     <g>{{ call(axisLeft(y) | tickValues([0,25,50,75,100]) | tickFormat("percent")) }}</g>
 
     {% for d in data %}
-      {% set bx = scale(x, d.Genero) %}
-      {% set bw = bandwidth(x) %}
-
-      {# Segmento Yes (azul, abajo) #}
+      {% set bx   = scale(x, d.Genero) %}
+      {% set bw   = bandwidth(x) %}
+      {% set bwh  = bw / 2 %}
       {% set yYes = scale(y, d.PctYes) %}
       {% set hYes = height - scale(y, d.PctYes) %}
+      {% set hYsh = hYes / 2 %}
+
+      {# Segmento Yes (azul, abajo) #}
       <rect x="{{bx}}" y="{{yYes}}" width="{{bw}}" height="{{hYes}}" fill="#2D68C4"/>
 
       {# Etiqueta dentro del segmento Yes #}
       <text class="pct-label" text-anchor="middle"
-            x="{{bx + bw/2}}" y="{{yYes + hYes/2 + 5}}">{{d.PctYes}}%</text>
+            x="{{bx + bwh}}" y="{{yYes + hYsh + 5}}">{{d.PctYes}}%</text>
 
       {# Segmento No (amarillo, arriba) #}
-      {% set hNo = height - scale(y, d.PctNo) %}
       <rect x="{{bx}}" y="0" width="{{bw}}" height="{{scale(y, d.PctYes)}}" fill="#F4C430"/>
     {% endfor %}
 

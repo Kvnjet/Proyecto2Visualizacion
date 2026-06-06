@@ -1,49 +1,31 @@
 {% set margin = obj("top", 50, "right", 30, "bottom", 70, "left", 75) %}
 {% set width  = 500 - margin.left - margin.right %}
 {% set height = 400 - margin.top  - margin.bottom %}
-
 {% set cats = ["No","Si"] %}
 {% set x = scaleBand() | domain(cats) | range(0, width) | padding(0.45) %}
-{% set maxY = 80 %}
-{% set y = scaleLinear() | domain([0, maxY]) | range(height, 0) %}
+{% set y = scaleLinear() | domain([0, 80]) | range(height, 0) %}
 {% set colorScale = scaleOrdinal() | domain(["No","Si"]) | range(["#F4C430","#2D68C4"]) %}
-
-<svg width="{{width + margin.left + margin.right}}"
-     height="{{height + margin.top + margin.bottom}}"
-     xmlns="http://www.w3.org/2000/svg">
+<svg width="{{width + margin.left + margin.right}}" height="{{height + margin.top + margin.bottom}}" xmlns="http://www.w3.org/2000/svg">
   <style>
     .tick-label { font-family: sans-serif; font-size: 12px; fill: #333; }
-    .axis-line, .tick-line { stroke: #666; }
     .bar-label { font-family: sans-serif; font-size: 13px; fill: #333; }
     .title { font-family: sans-serif; font-size: 14px; font-weight: bold; fill: #111; }
     .axis-label { font-family: sans-serif; font-size: 12px; fill: #555; }
   </style>
-
   <g transform="translate({{margin.left}},{{margin.top}})">
-
-    <text class="title" x="{{width / 2}}" y="-20" text-anchor="middle">
-      Distribución de Depresión en Estudiantes Encuestados
-    </text>
-
-    <g transform="translate(0,{{height}})">
-      {{ call(axisBottom(x) | tickValues(cats)) }}
-    </g>
+    <text class="title" x="{{width / 2}}" y="-20" text-anchor="middle">Distribución de Depresión en Estudiantes Encuestados</text>
+    <g transform="translate(0,{{height}})">{{ call(axisBottom(x) | tickValues(cats)) }}</g>
     <g>{{ call(axisLeft(y) | tickCount(5)) }}</g>
-
     {% for d in data %}
-      {% set bx = scale(x, d.Depresion) %}
-      {% set by = scale(y, d.Cantidad)  %}
-      {% set bw = bandwidth(x) %}
-      {% set bh = height - scale(y, d.Cantidad) %}
-      <rect x="{{bx}}" y="{{by}}" width="{{bw}}" height="{{bh}}"
-            fill="{{ scale(colorScale, d.Depresion) }}"/>
-      <text class="bar-label" text-anchor="middle"
-            x="{{bx + bw / 2}}" y="{{by - 6}}">{{d.Etiqueta}}</text>
+      {% set bx  = scale(x, d.Depresion) %}
+      {% set by  = scale(y, d.Cantidad) %}
+      {% set bw  = bandwidth(x) %}
+      {% set bh  = height - scale(y, d.Cantidad) %}
+      {% set bwh = bw / 2 %}
+      <rect x="{{bx}}" y="{{by}}" width="{{bw}}" height="{{bh}}" fill="{{ scale(colorScale, d.Depresion) }}"/>
+      <text class="bar-label" text-anchor="middle" x="{{bx + bwh}}" y="{{by - 6}}">{{d.Etiqueta}}</text>
     {% endfor %}
-
-    <text class="axis-label" text-anchor="middle"
-          x="{{width / 2}}" y="{{height + 50}}">Presencia de Depresión en el Estudiante</text>
-    <text class="axis-label" text-anchor="middle"
-          transform="rotate(-90)" x="{{-height / 2}}" y="-55">Número de Estudiantes Encuestados</text>
+    <text class="axis-label" text-anchor="middle" x="{{width / 2}}" y="{{height + 50}}">Presencia de Depresión en el Estudiante</text>
+    <text class="axis-label" text-anchor="middle" transform="rotate(-90)" x="{{-height / 2}}" y="-55">Número de Estudiantes Encuestados</text>
   </g>
 </svg>

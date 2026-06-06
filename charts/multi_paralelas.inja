@@ -1,115 +1,85 @@
-{# Gráfica Multidimensional: Coordenadas Paralelas
-   Variables: Edad | CGPA | Depresión | Ansiedad | Pánico | Tratamiento
-   Color: Azul = con depresión, Amarillo = sin depresión #}
-
 {% set totalW = 760 %}
 {% set totalH = 440 %}
 {% set padL   = 60  %}
-{% set padR   = 40  %}
 {% set padT   = 60  %}
 {% set padB   = 50  %}
-{% set chartW = totalW - padL - padR %}
+{% set chartW = totalW - padL - 40 %}
 {% set chartH = totalH - padT - padB %}
-
-{# 6 ejes: Edad(0), CGPA(1), Depresion(2), Ansiedad(3), Panico(4), Tratamiento(5) #}
-{% set numAxes = 6 %}
 {% set axisStep = chartW / 5 %}
-
-{# Posiciones X de cada eje #}
 {% set xEd  = 0 %}
 {% set xCG  = axisStep %}
 {% set xDep = axisStep * 2 %}
 {% set xAns = axisStep * 3 %}
 {% set xPan = axisStep * 4 %}
 {% set xTra = axisStep * 5 %}
-
-{# Escalas Y para cada eje #}
-{% set yEdad  = scaleLinear() | domain([18, 24]) | range(chartH, 0) %}
-{% set yCGPA  = scaleLinear() | domain([1, 5])   | range(chartH, 0) %}
-{% set yBin   = scaleLinear() | domain([0, 1])   | range(chartH, 0) %}
-
+{% set yEdad = scaleLinear() | domain([18, 24]) | range(chartH, 0) %}
+{% set yCGPA = scaleLinear() | domain([1, 5])   | range(chartH, 0) %}
+{% set yBin  = scaleLinear() | domain([0, 1])   | range(chartH, 0) %}
+{% set yNo = scale(yBin, 0) %}
+{% set ySi = scale(yBin, 1) %}
 <svg width="{{totalW}}" height="{{totalH}}" xmlns="http://www.w3.org/2000/svg">
   <style>
     .title      { font-family: sans-serif; font-size: 14px; font-weight: bold; fill: #111; }
     .axis-title { font-family: sans-serif; font-size: 12px; fill: #333; font-weight: bold; }
     .tick-lbl   { font-family: sans-serif; font-size: 10px; fill: #555; }
-    .axis-line  { stroke: #555; stroke-width: 1.5; }
-    .strand-dep { stroke: #2D68C4; stroke-width: 1.2; fill: none; opacity: 0.7; }
-    .strand-nod { stroke: #F4C430; stroke-width: 1.0; fill: none; opacity: 0.4; }
     .legend-txt { font-family: sans-serif; font-size: 11px; fill: #333; }
   </style>
-
-  <text class="title" x="{{totalW / 2}}" y="30" text-anchor="middle">
-    Perfil Multidimensional del Estudiante
-  </text>
-
+  <text class="title" x="{{totalW / 2}}" y="30" text-anchor="middle">Perfil Multidimensional del Estudiante</text>
   <g transform="translate({{padL}},{{padT}})">
-
-    {# Líneas de datos #}
     {% for d in data %}
-      {% set pEd  = scale(yEdad, d.Edad)       %}
-      {% set pCG  = scale(yCGPA, d.CGPA_val)   %}
-      {% set pDep = scale(yBin,  d.Depresion)  %}
-      {% set pAns = scale(yBin,  d.Ansiedad)   %}
-      {% set pPan = scale(yBin,  d.Panico)     %}
-      {% set pTra = scale(yBin,  d.Tratamiento)%}
-
-      {% if d.Depresion == 1 %}
-        <polyline class="strand-dep"
-          points="{{xEd}},{{pEd}} {{xCG}},{{pCG}} {{xDep}},{{pDep}} {{xAns}},{{pAns}} {{xPan}},{{pPan}} {{xTra}},{{pTra}}"/>
-      {% else %}
-        <polyline class="strand-nod"
-          points="{{xEd}},{{pEd}} {{xCG}},{{pCG}} {{xDep}},{{pDep}} {{xAns}},{{pAns}} {{xPan}},{{pPan}} {{xTra}},{{pTra}}"/>
-      {% endif %}
+      {% set pEd  = scale(yEdad, d.Edad) %}
+      {% set pCG  = scale(yCGPA, d.CGPA_val) %}
+      {% set pDep = scale(yBin, d.Depresion) %}
+      {% set pAns = scale(yBin, d.Ansiedad) %}
+      {% set pPan = scale(yBin, d.Panico) %}
+      {% set pTra = scale(yBin, d.Tratamiento) %}
+      <polyline points="{{xEd}},{{pEd}} {{xCG}},{{pCG}} {{xDep}},{{pDep}} {{xAns}},{{pAns}} {{xPan}},{{pPan}} {{xTra}},{{pTra}}" stroke="{{d.Color}}" stroke-width="1.2" fill="none" opacity="{{d.Opacity}}"/>
     {% endfor %}
-
-    {# Ejes verticales #}
-    <line class="axis-line" x1="{{xEd}}"  y1="0" x2="{{xEd}}"  y2="{{chartH}}"/>
-    <line class="axis-line" x1="{{xCG}}"  y1="0" x2="{{xCG}}"  y2="{{chartH}}"/>
-    <line class="axis-line" x1="{{xDep}}" y1="0" x2="{{xDep}}" y2="{{chartH}}"/>
-    <line class="axis-line" x1="{{xAns}}" y1="0" x2="{{xAns}}" y2="{{chartH}}"/>
-    <line class="axis-line" x1="{{xPan}}" y1="0" x2="{{xPan}}" y2="{{chartH}}"/>
-    <line class="axis-line" x1="{{xTra}}" y1="0" x2="{{xTra}}" y2="{{chartH}}"/>
-
-    {# Títulos de eje #}
+    <line x1="{{xEd}}"  y1="0" x2="{{xEd}}"  y2="{{chartH}}" stroke="#555" stroke-width="1.5"/>
+    <line x1="{{xCG}}"  y1="0" x2="{{xCG}}"  y2="{{chartH}}" stroke="#555" stroke-width="1.5"/>
+    <line x1="{{xDep}}" y1="0" x2="{{xDep}}" y2="{{chartH}}" stroke="#555" stroke-width="1.5"/>
+    <line x1="{{xAns}}" y1="0" x2="{{xAns}}" y2="{{chartH}}" stroke="#555" stroke-width="1.5"/>
+    <line x1="{{xPan}}" y1="0" x2="{{xPan}}" y2="{{chartH}}" stroke="#555" stroke-width="1.5"/>
+    <line x1="{{xTra}}" y1="0" x2="{{xTra}}" y2="{{chartH}}" stroke="#555" stroke-width="1.5"/>
     <text class="axis-title" x="{{xEd}}"  y="-10" text-anchor="middle">Edad</text>
     <text class="axis-title" x="{{xCG}}"  y="-10" text-anchor="middle">CGPA</text>
     <text class="axis-title" x="{{xDep}}" y="-10" text-anchor="middle">Depresión</text>
     <text class="axis-title" x="{{xAns}}" y="-10" text-anchor="middle">Ansiedad</text>
     <text class="axis-title" x="{{xPan}}" y="-10" text-anchor="middle">Pánico</text>
     <text class="axis-title" x="{{xTra}}" y="-10" text-anchor="middle">Tratamiento</text>
-
-    {# Ticks eje Edad #}
-    {% for age in [18,19,20,21,22,23,24] %}
+    {% set ages = [18,19,20,21,22,23,24] %}
+    {% for age in ages %}
       {% set ty = scale(yEdad, age) %}
       <line x1="{{xEd - 4}}" y1="{{ty}}" x2="{{xEd + 4}}" y2="{{ty}}" stroke="#555"/>
       <text class="tick-lbl" x="{{xEd - 7}}" y="{{ty + 4}}" text-anchor="end">{{age}}</text>
     {% endfor %}
-
-    {# Ticks eje CGPA #}
+    {% set cgpaVals   = [1,2,3,4,5] %}
     {% set cgpaLabels = ["0-1.99","2.00-2.49","2.50-2.99","3.00-3.49","3.50-4.00"] %}
-    {% for i in range(1,6) %}
+    {% for i in cgpaVals %}
       {% set ty = scale(yCGPA, i) %}
       <line x1="{{xCG - 4}}" y1="{{ty}}" x2="{{xCG + 4}}" y2="{{ty}}" stroke="#555"/>
-      <text class="tick-lbl" x="{{xCG - 7}}" y="{{ty + 4}}" text-anchor="end">{{cgpaLabels[i-1]}}</text>
+      <text class="tick-lbl" x="{{xCG - 7}}" y="{{ty + 4}}" text-anchor="end">{{cgpaLabels[i - 1]}}</text>
     {% endfor %}
-
-    {# Ticks ejes binarios (Dep, Ans, Pan, Tra) #}
-    {% for axX in [xDep, xAns, xPan, xTra] %}
-      {% set ty0 = scale(yBin, 0) %}
-      {% set ty1 = scale(yBin, 1) %}
-      <line x1="{{axX - 4}}" y1="{{ty0}}" x2="{{axX + 4}}" y2="{{ty0}}" stroke="#555"/>
-      <text class="tick-lbl" x="{{axX - 7}}" y="{{ty0 + 4}}" text-anchor="end">No</text>
-      <line x1="{{axX - 4}}" y1="{{ty1}}" x2="{{axX + 4}}" y2="{{ty1}}" stroke="#555"/>
-      <text class="tick-lbl" x="{{axX - 7}}" y="{{ty1 + 4}}" text-anchor="end">Sí</text>
-    {% endfor %}
-
-    {# Leyenda #}
-    <line x1="{{chartW - 140}}" y1="{{chartH + 30}}" x2="{{chartW - 120}}" y2="{{chartH + 30}}"
-          stroke="#2D68C4" stroke-width="2"/>
-    <text class="legend-txt" x="{{chartW - 115}}" y="{{chartH + 34}}">Con depresión</text>
-    <line x1="{{chartW - 20}}"  y1="{{chartH + 30}}" x2="{{chartW}}" y2="{{chartH + 30}}"
-          stroke="#F4C430" stroke-width="2"/>
-    <text class="legend-txt" x="{{chartW + 5}}" y="{{chartH + 34}}">Sin depresión</text>
+    <line x1="{{xDep-4}}" y1="{{yNo}}" x2="{{xDep+4}}" y2="{{yNo}}" stroke="#555"/>
+    <text class="tick-lbl" x="{{xDep-7}}" y="{{yNo+4}}" text-anchor="end">No</text>
+    <line x1="{{xDep-4}}" y1="{{ySi}}" x2="{{xDep+4}}" y2="{{ySi}}" stroke="#555"/>
+    <text class="tick-lbl" x="{{xDep-7}}" y="{{ySi+4}}" text-anchor="end">Sí</text>
+    <line x1="{{xAns-4}}" y1="{{yNo}}" x2="{{xAns+4}}" y2="{{yNo}}" stroke="#555"/>
+    <text class="tick-lbl" x="{{xAns-7}}" y="{{yNo+4}}" text-anchor="end">No</text>
+    <line x1="{{xAns-4}}" y1="{{ySi}}" x2="{{xAns+4}}" y2="{{ySi}}" stroke="#555"/>
+    <text class="tick-lbl" x="{{xAns-7}}" y="{{ySi+4}}" text-anchor="end">Sí</text>
+    <line x1="{{xPan-4}}" y1="{{yNo}}" x2="{{xPan+4}}" y2="{{yNo}}" stroke="#555"/>
+    <text class="tick-lbl" x="{{xPan-7}}" y="{{yNo+4}}" text-anchor="end">No</text>
+    <line x1="{{xPan-4}}" y1="{{ySi}}" x2="{{xPan+4}}" y2="{{ySi}}" stroke="#555"/>
+    <text class="tick-lbl" x="{{xPan-7}}" y="{{ySi+4}}" text-anchor="end">Sí</text>
+    <line x1="{{xTra-4}}" y1="{{yNo}}" x2="{{xTra+4}}" y2="{{yNo}}" stroke="#555"/>
+    <text class="tick-lbl" x="{{xTra-7}}" y="{{yNo+4}}" text-anchor="end">No</text>
+    <line x1="{{xTra-4}}" y1="{{ySi}}" x2="{{xTra+4}}" y2="{{ySi}}" stroke="#555"/>
+    <text class="tick-lbl" x="{{xTra-7}}" y="{{ySi+4}}" text-anchor="end">Sí</text>
+    {% set legY = chartH + 30 %}
+    <line x1="{{chartW - 150}}" y1="{{legY}}" x2="{{chartW - 130}}" y2="{{legY}}" stroke="#2D68C4" stroke-width="2"/>
+    <text class="legend-txt" x="{{chartW - 125}}" y="{{legY + 4}}">Con depresión</text>
+    <line x1="{{chartW - 30}}" y1="{{legY}}" x2="{{chartW - 10}}" y2="{{legY}}" stroke="#F4C430" stroke-width="2"/>
+    <text class="legend-txt" x="{{chartW - 5}}" y="{{legY + 4}}">Sin depresión</text>
   </g>
 </svg>

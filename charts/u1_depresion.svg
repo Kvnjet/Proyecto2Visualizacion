@@ -1,0 +1,71 @@
+<svg width="500" height="400" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .tick-label { font-family: sans-serif; font-size: 12px; fill: #333; }
+    .bar-label { font-family: sans-serif; font-size: 13px; fill: #333; }
+    .title { font-family: sans-serif; font-size: 14px; font-weight: bold; fill: #111; }
+    .axis-label { font-family: sans-serif; font-size: 12px; fill: #555; }
+  </style>
+  <g transform="translate(75,50)">
+    <text class="title" x="197.5" y="-20" text-anchor="middle">Distribución de Depresión en Estudiantes Encuestados</text>
+    <g transform="translate(0,280)"><!-- axis orientation=bottom range=[0,395] ticks=2 -->
+  <g class="axis axis-bottom" transform="translate(0, 0)">
+    <line class="axis-line" x1="0" y1="0" x2="395" y2="0" stroke="currentColor" stroke-width="1"/>
+    <g class="tick" transform="translate(44.44, 0)">
+      <line class="tick-line" x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="0" y="9" text-anchor="middle" dominant-baseline="hanging" dy="0.15em" >No</text>
+    </g>
+    <g class="tick" transform="translate(241.94, 0)">
+      <line class="tick-line" x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="0" y="9" text-anchor="middle" dominant-baseline="hanging" dy="0.15em" >Si</text>
+    </g>
+  </g>
+</g>
+    <g><!-- axis orientation=left range=[280,0] ticks=9 -->
+  <g class="axis axis-left" transform="translate(0, 0)">
+    <line class="axis-line" x1="0" y1="280" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+    <g class="tick" transform="translate(0, 280)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >0</text>
+    </g>
+    <g class="tick" transform="translate(0, 245)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >10</text>
+    </g>
+    <g class="tick" transform="translate(0, 210)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >20</text>
+    </g>
+    <g class="tick" transform="translate(0, 175)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >30</text>
+    </g>
+    <g class="tick" transform="translate(0, 140)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >40</text>
+    </g>
+    <g class="tick" transform="translate(0, 105)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >50</text>
+    </g>
+    <g class="tick" transform="translate(0, 70)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >60</text>
+    </g>
+    <g class="tick" transform="translate(0, 35)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >70</text>
+    </g>
+    <g class="tick" transform="translate(0, 0)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >80</text>
+    </g>
+  </g>
+</g>
+      <rect x="44.43749999999999" y="49.0" width="108.62500000000001" height="231.0" fill="#F4C430"/>
+      <text class="bar-label" text-anchor="middle" x="98.75" y="43.0">65.3%</text>
+      <rect x="241.9375" y="157.5" width="108.62500000000001" height="122.5" fill="#2D68C4"/>
+      <text class="bar-label" text-anchor="middle" x="296.25" y="151.5">34.7%</text>
+    <text class="axis-label" text-anchor="middle" x="197.5" y="330">Presencia de Depresión en el Estudiante</text>
+    <text class="axis-label" text-anchor="middle" transform="rotate(-90)" x="140.0" y="-55">Número de Estudiantes Encuestados</text>
+  </g>
+</svg>

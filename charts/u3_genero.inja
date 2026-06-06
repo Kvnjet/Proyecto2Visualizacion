@@ -1,42 +1,24 @@
 {% set totalW = 480 %}
 {% set totalH = 400 %}
 {% set cx = 240 %}
-{% set cy = 200 %}
+{% set cy = 210 %}
 {% set r  = 140 %}
-
 {% set pieGen = shapePie() | value("Cantidad") | sortValues(false) %}
 {% set arcGen = shapeArc() | innerRadius(0) | outerRadius(r) %}
 {% set slices = pieGen | pie(data) %}
-
 <svg width="{{totalW}}" height="{{totalH}}" xmlns="http://www.w3.org/2000/svg">
   <style>
-    .title      { font-family: sans-serif; font-size: 14px; font-weight: bold; fill: #111; }
-    .slice-label{ font-family: sans-serif; font-size: 13px; fill: white; font-weight: bold; }
+    .title       { font-family: sans-serif; font-size: 14px; font-weight: bold; fill: #111; }
+    .slice-label { font-family: sans-serif; font-size: 13px; fill: white; font-weight: bold; }
   </style>
-
-  <text class="title" x="{{cx}}" y="30" text-anchor="middle">
-    Distribución de Estudiantes por Género
-  </text>
-
+  <text class="title" x="{{cx}}" y="28" text-anchor="middle">Distribución de Estudiantes por Género</text>
   <g transform="translate({{cx}},{{cy}})">
     {% for slice in slices %}
-      <path d="{{ arcGen | arc(slice) }}"
-            fill="{{ data[loop.index0].Color }}"
-            stroke="white" stroke-width="2"/>
+      <path d="{{ arcGen | arc(slice) }}" fill="{{ data[loop.index0].Color }}" stroke="white" stroke-width="2"/>
     {% endfor %}
-
-    {# Etiquetas de porcentaje dentro de cada sector #}
-    {% for slice in slices %}
-      {% set midAngle = (slice.startAngle + slice.endAngle) / 2 %}
-      {% set labelR = r * 0.62 %}
-      {% set lx = labelR * sin(midAngle) %}
-      {% set ly = -labelR * cos(midAngle) %}
-      <text class="slice-label" x="{{lx}}" y="{{ly - 8}}" text-anchor="middle">
-        {{ data[loop.index0].Genero }}
-      </text>
-      <text class="slice-label" x="{{lx}}" y="{{ly + 10}}" text-anchor="middle">
-        {{ data[loop.index0].Porcentaje }}%
-      </text>
-    {% endfor %}
+    <text class="slice-label" x="45"  y="22"  text-anchor="middle">{{ data[0].Genero }}</text>
+    <text class="slice-label" x="45"  y="40"  text-anchor="middle">{{ data[0].Porcentaje }}%</text>
+    <text class="slice-label" x="-35" y="-63" text-anchor="middle">{{ data[1].Genero }}</text>
+    <text class="slice-label" x="-35" y="-45" text-anchor="middle">{{ data[1].Porcentaje }}%</text>
   </g>
 </svg>
