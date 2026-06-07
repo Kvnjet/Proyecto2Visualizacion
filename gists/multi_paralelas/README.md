@@ -1,0 +1,7 @@
+# Mental Health Profile — Multidimensional Parallel Coordinates Chart
+
+## Description
+This parallel coordinates chart visualizes all students simultaneously across six dimensions: age, CGPA (encoded numerically), depression, anxiety, panic attacks, and whether the student sought treatment. Each line represents one student. Blue lines correspond to students who reported depression; yellow lines to those who did not.
+
+## Insight
+Mental health is a complex phenomenon, where multiple factors coexist and interrelate. The following parallel coordinate visualization allows us to see all students at once, through six simultaneous dimensions. Each line represents a student. The blue lines correspond to those who report depression; the yellow cards, those who do not. By dragging the axes, it is possible to filter subgroups and identify profiles. A pattern that emerges: students with depression have a high probability of also presenting anxiety and panic attacks, which suggests an important comorbidity between these conditions. In addition, it is possible to identify a subgroup of concern: students who have multiple conditions but are not receiving treatment. This finding is perhaps the most important of the analysis, as it points to a critical gap between the need for and access to psychological care. 
