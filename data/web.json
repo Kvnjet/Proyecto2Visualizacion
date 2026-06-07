@@ -1,0 +1,140 @@
+{
+  "titulo": "La Silenciosa Crisis: Salud Mental en Estudiantes Universitarios",
+  "subtitulo": "Análisis de variables relacionadas con depresión, ansiedad y rendimiento académico",
+  "autores": "Mariana Navarro, Kevin Espinoza",
+  "fecha": "2026-04-12",
+  "introduccion": [
+    "En la actualidad, la salud mental universitaria es una preocupación central en el ámbito académico global. Los estudiantes enfrentan presiones académicas, sociales y económicas que pueden desencadenar o agravar condiciones como la depresión, la ansiedad y los ataques de pánico. Sin embargo, este fenómeno rara vez se examina con datos concretos que permitan identificar patrones y grupos vulnerables.",
+    "Este análisis exploratorio de datos (EDA) busca responder una pregunta central: ¿Cómo se manifiestan la depresión, la ansiedad y los ataques de pánico entre estudiantes universitarios, y qué factores (como el género, el rendimiento académico o el año de carrera) están asociados a estas condiciones?"
+  ],
+  "fuentes": {
+    "parrafos": [
+      "Los datos provienen de una encuesta aplicada a 101 estudiantes universitarios en agosto de 2020, distribuida en formato digital. El conjunto de datos original contiene 11 variables: marca de tiempo, género, edad, carrera, año de estudio, CGPA (promedio acumulado), estado civil, presencia de depresión, ansiedad y ataques de pánico, y si el estudiante buscó tratamiento especializado.",
+      "Para preparar los datos, se utilizó el script MakeManyJSON.py (Python + pandas). El procesamiento consistió en tres pasos principales:"
+    ],
+    "pasos": [
+      "Renombrado de columnas al español para facilitar el manejo interno (ej. \"Choose your gender\" → \"Genero\", \"Do you have Depression?\" → \"Depresion\").",
+      "Normalización de texto: se eliminaron espacios extra en los valores de CGPA y se estandarizó el año de estudio a minúsculas (ej. \"Year 1\" y \"year 1\" se unifican como \"year 1\").",
+      "Agregación y transformación: para cada gráfica se calcularon conteos, porcentajes o se codificaron variables binarias (Yes/No → 1/0). Los resultados se exportaron como archivos JSON independientes, uno por visualización."
+    ],
+    "cierre": "Este enfoque separa claramente los datos del diseño visual: el JSON contiene únicamente los valores necesarios para cada gráfica, y el template InjaX se encarga de convertirlos en SVG."
+  },
+  "descripcion": {
+    "parrafos": [
+      "El bienestar emocional de los estudiantes universitarios ha emergido como un tema de interés creciente en el ámbito de la educación superior y la salud mental. Diversos estudios han evidenciado que un número significativo de jóvenes atraviesa la etapa universitaria sin acceder a intervenciones psicológicas pertinentes, situación que se ve influenciada por factores como el desconocimiento de los servicios disponibles, el estigma asociado a los trastornos mentales y la limitada accesibilidad a recursos de salud mental.",
+      "El presente estudio tiene como objetivo abordar las siguientes preguntas de investigación:"
+    ],
+    "preguntas": [
+      "¿Cuál es la prevalencia de síntomas de depresión, ansiedad y ataques de pánico entre la población estudiantil universitaria?",
+      "¿Existen diferencias estadísticamente significativas en la prevalencia de estas condiciones según el género de los estudiantes?",
+      "¿Se observa una asociación entre el rendimiento académico (medido mediante el CGPA) y la presencia de depresión?",
+      "¿En qué año de la carrera se concentra la mayor incidencia de ansiedad?",
+      "¿Qué proporción de estudiantes que presentan estas condiciones recibe tratamiento o intervención psicológica adecuada?"
+    ],
+    "cierre": "El abordaje de estas preguntas permitirá caracterizar la magnitud y distribución de los problemas de salud mental en la población universitaria, así como identificar subgrupos con mayor vulnerabilidad, lo que resulta fundamental para el diseño de estrategias de prevención e intervención dirigidas a mejorar el bienestar emocional y el rendimiento académico de los estudiantes."
+  },
+  "secciones": [
+    {
+      "id": "univariables",
+      "titulo": "Análisis Univariable",
+      "graficas": [
+        {
+          "archivo": "charts/u3_genero.svg",
+          "titulo": "Distribución por Género",
+          "figura": 1,
+          "caption": "Distribución de estudiantes por género.",
+          "analisis": "La muestra está compuesta en su mayoría por estudiantes de género femenino. Esta distribución es importante tenerla en cuenta al interpretar los resultados, ya que el género puede modular la manera en que se experimentan y reportan las condiciones de salud mental. Esta información no indica que las mujeres tienen mayor tendencia a tener problemas de salud mental, sino que hay más mujeres que fueron encuestadas en la muestra. Esta diferencia en la representación no implica un sesgo negativo, pero sí invita a considerar el género como una variable de contexto fundamental a lo largo de todo el análisis."
+        },
+        {
+          "archivo": "charts/u2_cgpa.svg",
+          "titulo": "Distribución de CGPA",
+          "figura": 2,
+          "caption": "Distribución de estudiantes por rango de CGPA.",
+          "analisis": "En cuanto al rendimiento académico, la gran mayoría de los estudiantes encuestados se concentra en el rango de CGPA entre 3.00 y 3.49, lo que sugiere que la muestra está compuesta principalmente por estudiantes con un desempeño académico bueno o muy bueno. Sin embargo, existe una presencia notable de estudiantes en rangos más bajos, lo cual será relevante al explorar la relación entre rendimiento y salud mental. Conociendo ya la composición de la muestra, el siguiente paso es explorar si existen relaciones entre el rendimiento académico, el género y el año de estudio con las condiciones de salud mental. ¿El CGPA influye en la depresión? ¿Los primeros años son más difíciles emocionalmente?"
+        },
+        {
+          "archivo": "charts/u1_depresion.svg",
+          "titulo": "Distribución de Depresión",
+          "figura": 3,
+          "caption": "Distribución de estudiantes según presencia de depresión.",
+          "analisis": "El siguiente grafico muestra la proporción de estudiantes encuestados que reportaron síntomas de depresión. La categoría “No” (estudiantes que no reportaron depresión) representa el 65.3% del total. La categoría “Sí” (estudiantes que reportaron depresión) constituye el 34.7%. Mediante este grafico se abstrae que Aproximadamente uno de cada tres estudiantes encuestados presenta síntomas de depresión, lo que indica una prevalencia considerable dentro de la población universitaria estudiada. Este primer hallazgo que llama la atención es que una proporción considerable de los estudiantes encuestados reporta haber experimentado depresión. Este dato por sí solo justifica la necesidad de este análisis: la depresión no es un caso aislado, sino una realidad que afecta a una parte significativa de la comunidad estudiantil. Esta visualización establece el punto de partida de nuestra historia: el problema existe, es medible, y merece ser explorado con mayor profundidad."
+        }
+      ]
+    },
+    {
+      "id": "bivariables",
+      "titulo": "Análisis Bivariable",
+      "graficas": [
+        {
+          "archivo": "charts/bi3_dep_genero.svg",
+          "titulo": "Depresión y Género",
+          "figura": 4,
+          "caption": "Relación entre depresión y género de los estudiantes.",
+          "analisis": "Al normalizar los datos al 100%, podemos comparar de manera adecuada las diferencias que emergren. El gráfico muestra que las estudiantes de género femenino presentan una mayor proporción de depresión que sus compañeros masculinos. Esta diferencia, aunque puede estar influenciada por la mayor disposición femenina a reportar síntomas, señala que el género es una variable que no puede ignorarse en el diseño de políticas de salud mental universitaria."},
+        {
+          "archivo": "charts/bi1_cgpa_dep.svg",
+          "titulo": "CGPA y Depresión",
+          "figura": 5,
+          "caption": "Relación entre rango de CGPA y presencia de depresión.",
+          "analisis": "Lo que este gráfico revela es que la depresión es más frecuente en los rangos superiores de CGPA. De hecho, la mayor concentración de estudiantes con depresión se da en el rango 3.00 – 3.49, el mismo rango donde se concentra la mayoría de la muestra.En el caso de los rangos de CGPA mas bajo se observa que no se reporta sintomas de depresin. Lo anterior sugiere que el estrés de mantener un buen promedio puede ser tan o más pesado que el de obtener notas bajas."},
+        {
+          "archivo": "charts/bi2_ansiedad_anio.svg",
+          "titulo": "Ansiedad y Año Académico",
+          "figura": 6,
+          "caption": "Niveles de ansiedad según año académico.",
+          "analisis": "¿En qué momento de la carrera se concentra más la ansiedad? Esta visualización revela que los primeros años de estudio concentran la mayor cantidad de estudiantes en la muestra, lo que naturalmente también implica mayor número de casos de ansiedad. Sin embargo, al observar la proporción de estudiantes con ansiedad dentro de cada año, se evidencia que la condición no desaparece con el avance en la carrera. Esta concentracion de datos en los primeros años tambien coincide con el período de mayor adaptación a la vida universitaria. Sin embargo, también es donde hay más estudiantes en general, por lo que es importante interpretar esto con cautela. Este dato es relevante para diseñar intervenciones tempranas dirigidas a estudiantes de nuevo ingreso." }
+
+      ]
+    },
+    {
+      "id": "multivariable",
+      "titulo": "Análisis Multivariable",
+      "graficas": [
+        {
+          "archivo": "charts/multi_paralelas.svg",
+          "titulo": "Coordenadas Paralelas",
+          "figura": 7,
+          "caption": "Visualización multivariable mediante coordenadas paralelas.",
+          "analisis": "Los gráficos anteriores nos han mostrado relaciones de a dos variables. Pero la salud mental es un fenómeno complejo, donde múltiples factores coexisten y se interrelacionan. La siguiente visualización de coordenadas paralelas nos permite ver a todos los estudiantes a la vez, a través de seis dimensiones simultáneas. Cada línea representa un estudiante. Las líneas azules corresponden a quienes reportan depresión; las amarillas, a quienes no. Al arrastrar los ejes, es posible filtrar subgrupos e identificar perfiles. Un patrón que emerge: los estudiantes con depresión tienen una alta probabilidad de presentar también ansiedad y ataques de pánico, lo que sugiere una comorbilidad importante entre estas condiciones. Además, es posible identificar un subgrupo preocupante: estudiantes que presentan múltiples condiciones pero que no están recibiendo tratamiento. Este hallazgo es quizás el más importante del análisis, ya que señala una brecha crítica entre la necesidad y el acceso a atención psicológica. Se peude interactuar con la visualización para explorar estos patrones."}
+      ]
+    },
+    {
+      "id": "facetas",
+      "titulo": "Análisis por Facetas",
+      "graficas": [
+        {
+          "archivo": "charts/facets_genero.svg",
+          "titulo": "Distribución por Género (Facetas)",
+          "figura": 8,
+          "caption": "Distribución de variables por género mediante facetas.",
+          "analisis": "La siguiente visualización usa facetas para mostrar, de manera separada por género, la prevalencia de las tres condiciones de salud mental: depresión, ansiedad y pánico. Esta visualización de facetas es especialmente reveladora: en prácticamente todas las condiciones, las mujeres muestran porcentajes más altos. Llama la atención que la ansiedad es la condición más prevalente en ambos géneros, superando incluso a la depresión. Los ataques de pánico, aunque menos frecuentes, también están presentes en proporciones no menores."        }
+      ]
+    }
+  ],
+  "conclusiones": {
+    "intro": "Mediante el análisis exploratorio realizado se extraen las siguientes conclusiones:",
+    "items": [
+      {
+        "negrita": "La depresión afecta a una proporción significativa de estudiantes,",
+        "texto": " independientemente de su rendimiento académico. Mantener un CGPA alto no protege contra la depresión."
+      },
+      {
+        "negrita": "La ansiedad es la condición más prevalente en la muestra,",
+        "texto": " y está presente en todos los años de estudio, lo que sugiere que es una compañera crónica de la vida universitaria."
+      },
+      {
+        "negrita": "Las mujeres reportan mayores tasas de depresión, ansiedad y ataques de pánico que los hombres.",
+        "texto": " Esto puede reflejar tanto una mayor vulnerabilidad como una mayor disposición a reconocer y reportar los síntomas."
+      },
+      {
+        "negrita": "Las condiciones de salud mental tienden a coexistir:",
+        "texto": " los estudiantes que presentan depresión también tienden a reportar ansiedad y pánico, lo que refuerza la necesidad de abordajes integrales de salud mental."
+      },
+      {
+        "negrita": "La búsqueda de tratamiento especializado sigue siendo baja",
+        "texto": " en relación con la prevalencia de las condiciones reportadas, lo que señala una brecha importante entre la necesidad de atención y el acceso efectivo a ella."
+      }
+    ],
+    "cierre": "En definitiva, los datos no solo confirman que la salud mental estudiantil es un problema real y medible, sino que permiten identificar con precisión los grupos y momentos donde la intervención es más necesaria. El primer paso para mejorar el bienestar estudiantil es exactamente este: escuchar lo que los datos tienen que decir."
+  }
+}

@@ -48,8 +48,8 @@ $INJAX $DATA/facets_genero.json   $CHARTS/facets_genero.inja   $CHARTS/facets_ge
 echo "  [OK] facets_genero.svg"
 
 # Página Web
-$INJAX $DATA/index.json           $CHARTS/index.inja           index.html
-echo "  [OK] index.html"
+$INJAX $DATA/web.json           $CHARTS/web.inja           web.html
+echo "  [OK] web.html"
 
 echo ""
 echo "Listo. SVGs generados en: $CHARTS/"

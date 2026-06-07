@@ -116,12 +116,15 @@
   <div class="toc-title">Tabla de Contenidos</div>
   <ul>
     <li class="level1"><a href="#introduccion">Introducción</a></li>
+    <li class="level1"><a href="#descripcion">Descripción del Problema</a></li>
+    <li class="level1"><a href="#fuentes">Fuentes de Datos</a></li>
     {% for sec in secciones %}
     <li class="level1"><a href="#{{sec.id}}">{{sec.titulo}}</a></li>
     {% for g in sec.graficas %}
     <li class="level2"><a href="#{{sec.id}}-{{loop.index}}">{{g.titulo}}</a></li>
     {% endfor %}
     {% endfor %}
+    <li class="level1"><a href="#conclusiones">Conclusiones</a></li>
   </ul>
 </nav>
 
@@ -136,7 +139,35 @@
 
   <section id="introduccion">
     <h2>Introducción</h2>
-    <p>{{introduccion}}</p>
+    {% for parrafo in introduccion %}
+    <p>{{parrafo}}</p>
+    {% endfor %}
+  </section>
+
+  <section id="fuentes">
+    <h2>Fuentes de Datos</h2>
+    {% for p in fuentes.parrafos %}
+    <p>{{p}}</p>
+    {% endfor %}
+    <ol style="margin: 0.5rem 0 1rem 1.5rem; line-height: 1.8;">
+    {% for paso in fuentes.pasos %}
+      <li>{{paso}}</li>
+    {% endfor %}
+    </ol>
+    <p>{{fuentes.cierre}}</p>
+  </section>
+
+  <section id="descripcion">
+    <h2>Descripción del Problema</h2>
+    {% for p in descripcion.parrafos %}
+    <p>{{p}}</p>
+    {% endfor %}
+    <ul style="margin: 0.5rem 0 1rem 1.5rem; line-height: 1.8;">
+    {% for q in descripcion.preguntas %}
+      <li>{{q}}</li>
+    {% endfor %}
+    </ul>
+    <p>{{descripcion.cierre}}</p>
   </section>
 
   {% for sec in secciones %}
@@ -152,6 +183,17 @@
     {% endfor %}
   </section>
   {% endfor %}
+
+  <section id="conclusiones">
+    <h2>Conclusiones</h2>
+    <p>{{conclusiones.intro}}</p>
+    <ol style="margin: 0.5rem 0 1rem 1.5rem; line-height: 1.8;">
+    {% for c in conclusiones.items %}
+      <li><strong>{{c.negrita}}</strong>{{c.texto}}</li>
+    {% endfor %}
+    </ol>
+    <p>{{conclusiones.cierre}}</p>
+  </section>
 
 </main>
 </body>
