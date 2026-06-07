@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Silenciosa Crisis: Salud Mental en Estudiantes Universitarios</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 15px;
+      color: #222;
+      background: #fff;
+      display: flex;
+    }
+
+    /* ── Sidebar ── */
+    nav.toc {
+      position: fixed;
+      top: 0; left: 0;
+      width: 240px;
+      height: 100vh;
+      overflow-y: auto;
+      background: #f5f5f5;
+      border-right: 1px solid #ddd;
+      padding: 1.2rem 0;
+      font-family: sans-serif;
+      font-size: 0.82rem;
+    }
+    nav.toc .toc-title {
+      font-weight: bold;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #888;
+      padding: 0 1rem 0.5rem;
+    }
+    nav.toc ul { list-style: none; }
+    nav.toc li a {
+      display: block;
+      padding: 0.25rem 1rem;
+      color: #333;
+      text-decoration: none;
+      line-height: 1.4;
+    }
+    nav.toc li a:hover { color: #0070c0; }
+    nav.toc li.level1 > a { font-weight: 600; color: #111; }
+    nav.toc li.level2 > a { padding-left: 1.8rem; color: #444; }
+    nav.toc li.level3 > a { padding-left: 2.6rem; color: #666; font-size: 0.78rem; }
+
+    /* ── Main content ── */
+    main {
+      margin-left: 240px;
+      max-width: 820px;
+      padding: 2.5rem 3rem 5rem;
+      line-height: 1.75;
+    }
+
+    /* Title block */
+    .title-block {
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid #ddd;
+    }
+    .title-block h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      line-height: 1.25;
+      margin-bottom: 0.6rem;
+    }
+    .title-block .author { font-size: 0.95rem; color: #444; }
+    .title-block .date   { font-size: 0.88rem; color: #888; margin-top: 0.15rem; }
+
+    /* Sections */
+    section { margin-bottom: 3rem; }
+
+    h2 {
+      font-size: 1.55rem;
+      font-weight: bold;
+      margin: 2.5rem 0 0.6rem;
+      padding-bottom: 0.2rem;
+      border-bottom: 1px solid #ddd;
+    }
+    h3 {
+      font-size: 1.15rem;
+      font-weight: bold;
+      margin: 2rem 0 0.4rem;
+      color: #222;
+    }
+
+    p { margin-bottom: 0.75rem; }
+
+    /* Charts */
+    .chart-block {
+      margin: 1.5rem 0 0.5rem;
+      text-align: center;
+    }
+    .chart-block img {
+      max-width: 100%;
+      height: auto;
+      background: #fff;
+    }
+    .chart-caption {
+      font-family: sans-serif;
+      font-size: 0.82rem;
+      color: #666;
+      margin-top: 0.35rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Sidebar TOC -->
+<nav class="toc">
+  <div class="toc-title">Tabla de Contenidos</div>
+  <ul>
+    <li class="level1"><a href="#introduccion">Introducción</a></li>
+    <li class="level1"><a href="#univariables">Análisis Univariable</a></li>
+    <li class="level2"><a href="#univariables-0">Distribución de Depresión</a></li>
+    <li class="level2"><a href="#univariables-1">Distribución de CGPA</a></li>
+    <li class="level2"><a href="#univariables-2">Distribución por Género</a></li>
+    <li class="level1"><a href="#bivariables">Análisis Bivariable</a></li>
+    <li class="level2"><a href="#bivariables-0">CGPA y Depresión</a></li>
+    <li class="level2"><a href="#bivariables-1">Ansiedad y Año Académico</a></li>
+    <li class="level2"><a href="#bivariables-2">Depresión y Género</a></li>
+    <li class="level1"><a href="#multivariable">Análisis Multivariable</a></li>
+    <li class="level2"><a href="#multivariable-0">Coordenadas Paralelas</a></li>
+    <li class="level1"><a href="#facetas">Análisis por Facetas</a></li>
+    <li class="level2"><a href="#facetas-0">Distribución por Género (Facetas)</a></li>
+  </ul>
+</nav>
+
+<!-- Main content -->
+<main>
+
+  <div class="title-block">
+    <h1>La Silenciosa Crisis: Salud Mental en Estudiantes Universitarios</h1>
+    <p class="author">Mariana Navarro, Kevin Espinoza</p>
+    <p class="date">2026-04-12</p>
+  </div>
+
+  <section id="introduccion">
+    <h2>Introducción</h2>
+    <p>Este proyecto analiza datos de salud mental en estudiantes universitarios, explorando la relación entre variables académicas y psicológicas como la depresión, la ansiedad, el rendimiento académico (CGPA) y el género. El conjunto de datos proviene de una encuesta aplicada a estudiantes e incluye información sobre su estado de salud mental reportado, su promedio acumulado y características demográficas básicas.</p>
+  </section>
+
+  <section id="univariables">
+    <h2>Análisis Univariable</h2>
+    <h3 id="univariables-0">Distribución de Depresión</h3>
+    <p>La mayoría de los estudiantes en la muestra no reportan depresión. Sin embargo, una proporción significativa sí la presenta, lo que evidencia la relevancia del tema en el contexto universitario.</p>
+    <div class="chart-block">
+      <img src="charts/u1_depresion.svg" alt="Distribución de Depresión" />
+      <p class="chart-caption">Figura 1. Distribución de estudiantes según presencia de depresión.</p>
+    </div>
+    <h3 id="univariables-1">Distribución de CGPA</h3>
+    <p>El rendimiento académico se concentra mayoritariamente en los rangos superiores (3.00–4.00), lo que indica que la muestra está compuesta principalmente por estudiantes con buen desempeño académico.</p>
+    <div class="chart-block">
+      <img src="charts/u2_cgpa.svg" alt="Distribución de CGPA" />
+      <p class="chart-caption">Figura 2. Distribución de estudiantes por rango de CGPA.</p>
+    </div>
+    <h3 id="univariables-2">Distribución por Género</h3>
+    <p>La muestra presenta una marcada predominancia femenina, con aproximadamente tres cuartas partes de los estudiantes identificados como mujeres.</p>
+    <div class="chart-block">
+      <img src="charts/u3_genero.svg" alt="Distribución por Género" />
+      <p class="chart-caption">Figura 3. Distribución de estudiantes por género.</p>
+    </div>
+  </section>
+  <section id="bivariables">
+    <h2>Análisis Bivariable</h2>
+    <h3 id="bivariables-0">CGPA y Depresión</h3>
+    <p>Al cruzar el rendimiento académico con la depresión, se observa que los estudiantes con CGPA alto (3.00–4.00) concentran tanto las mayores cantidades con depresión como sin ella, lo cual es esperable dado que ese rango agrupa la mayor parte de la muestra.</p>
+    <div class="chart-block">
+      <img src="charts/bi1_cgpa_dep.svg" alt="CGPA y Depresión" />
+      <p class="chart-caption">Figura 4. Relación entre rango de CGPA y presencia de depresión.</p>
+    </div>
+    <h3 id="bivariables-1">Ansiedad y Año Académico</h3>
+    <p>Se analiza cómo varía la ansiedad reportada a lo largo de los distintos años de la carrera universitaria, permitiendo identificar momentos de mayor vulnerabilidad en el recorrido académico.</p>
+    <div class="chart-block">
+      <img src="charts/bi2_ansiedad_anio.svg" alt="Ansiedad y Año Académico" />
+      <p class="chart-caption">Figura 5. Niveles de ansiedad según año académico.</p>
+    </div>
+    <h3 id="bivariables-2">Depresión y Género</h3>
+    <p>La relación entre género y depresión muestra diferencias entre grupos, lo que sugiere que el género puede ser un factor relevante en la salud mental de los estudiantes universitarios.</p>
+    <div class="chart-block">
+      <img src="charts/bi3_dep_genero.svg" alt="Depresión y Género" />
+      <p class="chart-caption">Figura 6. Relación entre depresión y género de los estudiantes.</p>
+    </div>
+  </section>
+  <section id="multivariable">
+    <h2>Análisis Multivariable</h2>
+    <h3 id="multivariable-0">Coordenadas Paralelas</h3>
+    <p>La visualización de coordenadas paralelas permite observar simultáneamente múltiples variables por estudiante, facilitando la identificación de patrones entre CGPA, ansiedad, depresión y otras dimensiones del dataset.</p>
+    <div class="chart-block">
+      <img src="charts/multi_paralelas.svg" alt="Coordenadas Paralelas" />
+      <p class="chart-caption">Figura 7. Visualización multivariable mediante coordenadas paralelas.</p>
+    </div>
+  </section>
+  <section id="facetas">
+    <h2>Análisis por Facetas</h2>
+    <h3 id="facetas-0">Distribución por Género (Facetas)</h3>
+    <p>La visualización por facetas desglosa la distribución de variables separando los datos por género, permitiendo comparar directamente los patrones entre estudiantes masculinos y femeninos.</p>
+    <div class="chart-block">
+      <img src="charts/facets_genero.svg" alt="Distribución por Género (Facetas)" />
+      <p class="chart-caption">Figura 8. Distribución de variables por género mediante facetas.</p>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>

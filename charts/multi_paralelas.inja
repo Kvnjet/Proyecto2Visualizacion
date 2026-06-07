@@ -17,6 +17,8 @@
 {% set yBin  = scaleLinear() | domain([0, 1])   | range(chartH, 0) %}
 {% set yNo = scale(yBin, 0) %}
 {% set ySi = scale(yBin, 1) %}
+{% set tk = 4 %}
+{% set tko = 7 %}
 <svg width="{{totalW}}" height="{{totalH}}" xmlns="http://www.w3.org/2000/svg">
   <style>
     .title      { font-family: sans-serif; font-size: 14px; font-weight: bold; fill: #111; }
@@ -47,44 +49,72 @@
     <text class="axis-title" x="{{xAns}}" y="-10" text-anchor="middle">Ansiedad</text>
     <text class="axis-title" x="{{xPan}}" y="-10" text-anchor="middle">Panico</text>
     <text class="axis-title" x="{{xTra}}" y="-10" text-anchor="middle">Tratamiento</text>
-    {% set ages = [18,19,20,21,22,23,24] %}
-    {% for age in ages %}
-      {% set ty = scale(yEdad, age) %}
-      <line x1="{{xEd - 4}}" y1="{{ty}}" x2="{{xEd + 4}}" y2="{{ty}}" stroke="#555"/>
-      <text class="tick-lbl" x="{{xEd - 7}}" y="{{ty + 4}}" text-anchor="end">{{age}}</text>
-    {% endfor %}
-    {% set cgpaVals   = [1,2,3,4,5] %}
-    {% set cgpaLabels = ["0-1.99","2.00-2.49","2.50-2.99","3.00-3.49","3.50-4.00"] %}
-    {% for i in cgpaVals %}
-      {% set ty = scale(yCGPA, i) %}
-      <line x1="{{xCG - 4}}" y1="{{ty}}" x2="{{xCG + 4}}" y2="{{ty}}" stroke="#555"/>
-      <text class="tick-lbl" x="{{xCG - 7}}" y="{{ty + 4}}" text-anchor="end">{{cgpaLabels[i - 1]}}</text>
-    {% endfor %}
-    <line x1="{{xDep - 4}}" y1="{{yNo}}" x2="{{xDep + 4}}" y2="{{yNo}}" stroke="#555"/>
-    <text class="tick-lbl" x="{{xDep - 7}}" y="{{yNo + 4}}" text-anchor="end">No</text>
-    <line x1="{{xDep - 4}}" y1="{{ySi}}" x2="{{xDep + 4}}" y2="{{ySi}}" stroke="#555"/>
-    <text class="tick-lbl" x="{{xDep - 7}}" y="{{ySi + 4}}" text-anchor="end">Si</text>
-    <line x1="{{xAns - 4}}" y1="{{yNo}}" x2="{{xAns + 4}}" y2="{{yNo}}" stroke="#555"/>
-    <text class="tick-lbl" x="{{xAns - 7}}" y="{{yNo + 4}}" text-anchor="end">No</text>
-    <line x1="{{xAns - 4}}" y1="{{ySi}}" x2="{{xAns + 4}}" y2="{{ySi}}" stroke="#555"/>
-    <text class="tick-lbl" x="{{xAns - 7}}" y="{{ySi + 4}}" text-anchor="end">Si</text>
-    <line x1="{{xPan - 4}}" y1="{{yNo}}" x2="{{xPan + 4}}" y2="{{yNo}}" stroke="#555"/>
-    <text class="tick-lbl" x="{{xPan - 7}}" y="{{yNo + 4}}" text-anchor="end">No</text>
-    <line x1="{{xPan - 4}}" y1="{{ySi}}" x2="{{xPan + 4}}" y2="{{ySi}}" stroke="#555"/>
-    <text class="tick-lbl" x="{{xPan - 7}}" y="{{ySi + 4}}" text-anchor="end">Si</text>
-    <line x1="{{xTra - 4}}" y1="{{yNo}}" x2="{{xTra + 4}}" y2="{{yNo}}" stroke="#555"/>
-    <text class="tick-lbl" x="{{xTra - 7}}" y="{{yNo + 4}}" text-anchor="end">No</text>
-    <line x1="{{xTra - 4}}" y1="{{ySi}}" x2="{{xTra + 4}}" y2="{{ySi}}" stroke="#555"/>
-    <text class="tick-lbl" x="{{xTra - 7}}" y="{{ySi + 4}}" text-anchor="end">Si</text>
+    {% set xEdL = xEd - tk %}{% set xEdR = xEd + tk %}{% set xEdT = xEd - tko %}
+    {% set xCGL = xCG - tk %}{% set xCGR = xCG + tk %}{% set xCGT = xCG - tko %}
+    {% set xDepL = xDep - tk %}{% set xDepR = xDep + tk %}{% set xDepT = xDep - tko %}
+    {% set xAnsL = xAns - tk %}{% set xAnsR = xAns + tk %}{% set xAnsT = xAns - tko %}
+    {% set xPanL = xPan - tk %}{% set xPanR = xPan + tk %}{% set xPanT = xPan - tko %}
+    {% set xTraL = xTra - tk %}{% set xTraR = xTra + tk %}{% set xTraT = xTra - tko %}
+    {% set ty18 = scale(yEdad, 18) %}{% set ty18o = ty18 + 4 %}
+    {% set ty19 = scale(yEdad, 19) %}{% set ty19o = ty19 + 4 %}
+    {% set ty20 = scale(yEdad, 20) %}{% set ty20o = ty20 + 4 %}
+    {% set ty21 = scale(yEdad, 21) %}{% set ty21o = ty21 + 4 %}
+    {% set ty22 = scale(yEdad, 22) %}{% set ty22o = ty22 + 4 %}
+    {% set ty23 = scale(yEdad, 23) %}{% set ty23o = ty23 + 4 %}
+    {% set ty24 = scale(yEdad, 24) %}{% set ty24o = ty24 + 4 %}
+    <line x1="{{xEdL}}" y1="{{ty18}}" x2="{{xEdR}}" y2="{{ty18}}" stroke="#555"/>
+    <text class="tick-lbl" x="{{xEdT}}" y="{{ty18o}}" text-anchor="end">18</text>
+    <line x1="{{xEdL}}" y1="{{ty19}}" x2="{{xEdR}}" y2="{{ty19}}" stroke="#555"/>
+    <text class="tick-lbl" x="{{xEdT}}" y="{{ty19o}}" text-anchor="end">19</text>
+    <line x1="{{xEdL}}" y1="{{ty20}}" x2="{{xEdR}}" y2="{{ty20}}" stroke="#555"/>
+    <text class="tick-lbl" x="{{xEdT}}" y="{{ty20o}}" text-anchor="end">20</text>
+    <line x1="{{xEdL}}" y1="{{ty21}}" x2="{{xEdR}}" y2="{{ty21}}" stroke="#555"/>
+    <text class="tick-lbl" x="{{xEdT}}" y="{{ty21o}}" text-anchor="end">21</text>
+    <line x1="{{xEdL}}" y1="{{ty22}}" x2="{{xEdR}}" y2="{{ty22}}" stroke="#555"/>
+    <text class="tick-lbl" x="{{xEdT}}" y="{{ty22o}}" text-anchor="end">22</text>
+    <line x1="{{xEdL}}" y1="{{ty23}}" x2="{{xEdR}}" y2="{{ty23}}" stroke="#555"/>
+    <text class="tick-lbl" x="{{xEdT}}" y="{{ty23o}}" text-anchor="end">23</text>
+    <line x1="{{xEdL}}" y1="{{ty24}}" x2="{{xEdR}}" y2="{{ty24}}" stroke="#555"/>
+    <text class="tick-lbl" x="{{xEdT}}" y="{{ty24o}}" text-anchor="end">24</text>
+    {% set tc1 = scale(yCGPA, 1) %}{% set tc1o = tc1 + 4 %}
+    {% set tc2 = scale(yCGPA, 2) %}{% set tc2o = tc2 + 4 %}
+    {% set tc3 = scale(yCGPA, 3) %}{% set tc3o = tc3 + 4 %}
+    {% set tc4 = scale(yCGPA, 4) %}{% set tc4o = tc4 + 4 %}
+    {% set tc5 = scale(yCGPA, 5) %}{% set tc5o = tc5 + 4 %}
+    <line x1="{{xCGL}}" y1="{{tc1}}" x2="{{xCGR}}" y2="{{tc1}}" stroke="#555"/>
+    <text class="tick-lbl" x="{{xCGT}}" y="{{tc1o}}" text-anchor="end">0-1.99</text>
+    <line x1="{{xCGL}}" y1="{{tc2}}" x2="{{xCGR}}" y2="{{tc2}}" stroke="#555"/>
+    <text class="tick-lbl" x="{{xCGT}}" y="{{tc2o}}" text-anchor="end">2.00-2.49</text>
+    <line x1="{{xCGL}}" y1="{{tc3}}" x2="{{xCGR}}" y2="{{tc3}}" stroke="#555"/>
+    <text class="tick-lbl" x="{{xCGT}}" y="{{tc3o}}" text-anchor="end">2.50-2.99</text>
+    <line x1="{{xCGL}}" y1="{{tc4}}" x2="{{xCGR}}" y2="{{tc4}}" stroke="#555"/>
+    <text class="tick-lbl" x="{{xCGT}}" y="{{tc4o}}" text-anchor="end">3.00-3.49</text>
+    <line x1="{{xCGL}}" y1="{{tc5}}" x2="{{xCGR}}" y2="{{tc5}}" stroke="#555"/>
+    <text class="tick-lbl" x="{{xCGT}}" y="{{tc5o}}" text-anchor="end">3.50-4.00</text>
+    {% set yNoO = yNo + 4 %}{% set ySiO = ySi + 4 %}
+    <line x1="{{xDepL}}" y1="{{yNo}}" x2="{{xDepR}}" y2="{{yNo}}" stroke="#555"/>
+    <text class="tick-lbl" x="{{xDepT}}" y="{{yNoO}}" text-anchor="end">No</text>
+    <line x1="{{xDepL}}" y1="{{ySi}}" x2="{{xDepR}}" y2="{{ySi}}" stroke="#555"/>
+    <text class="tick-lbl" x="{{xDepT}}" y="{{ySiO}}" text-anchor="end">Si</text>
+    <line x1="{{xAnsL}}" y1="{{yNo}}" x2="{{xAnsR}}" y2="{{yNo}}" stroke="#555"/>
+    <text class="tick-lbl" x="{{xAnsT}}" y="{{yNoO}}" text-anchor="end">No</text>
+    <line x1="{{xAnsL}}" y1="{{ySi}}" x2="{{xAnsR}}" y2="{{ySi}}" stroke="#555"/>
+    <text class="tick-lbl" x="{{xAnsT}}" y="{{ySiO}}" text-anchor="end">Si</text>
+    <line x1="{{xPanL}}" y1="{{yNo}}" x2="{{xPanR}}" y2="{{yNo}}" stroke="#555"/>
+    <text class="tick-lbl" x="{{xPanT}}" y="{{yNoO}}" text-anchor="end">No</text>
+    <line x1="{{xPanL}}" y1="{{ySi}}" x2="{{xPanR}}" y2="{{ySi}}" stroke="#555"/>
+    <text class="tick-lbl" x="{{xPanT}}" y="{{ySiO}}" text-anchor="end">Si</text>
+    <line x1="{{xTraL}}" y1="{{yNo}}" x2="{{xTraR}}" y2="{{yNo}}" stroke="#555"/>
+    <text class="tick-lbl" x="{{xTraT}}" y="{{yNoO}}" text-anchor="end">No</text>
+    <line x1="{{xTraL}}" y1="{{ySi}}" x2="{{xTraR}}" y2="{{ySi}}" stroke="#555"/>
+    <text class="tick-lbl" x="{{xTraT}}" y="{{ySiO}}" text-anchor="end">Si</text>
     {% set legY = chartH + 30 %}
-    <line x1="{{chartW - 150}}" y1="{{legY}}" x2="{{chartW - 130}}" y2="{{legY}}" stroke="#2D68C4" stroke-width="2"/>
-    <text class="legend-txt" x="{{chartW - 125}}" y="{{legY + 4}}">Con depresion</text>
-    <line x1="{{chartW - 30}}" y1="{{legY}}" x2="{{chartW - 10}}" y2="{{legY}}" stroke="#F4C430" stroke-width="2"/>
-    <text class="legend-txt" x="{{chartW - 5}}" y="{{legY + 4}}">Sin depresion</text>
-  </g>
-</svg>
-    <text class="legend-txt" x="{{chartW - 125}}" y="{{legY + 4}}">Con depresion</text>
-    <line x1="{{chartW - 30}}" y1="{{legY}}" x2="{{chartW - 10}}" y2="{{legY}}" stroke="#F4C430" stroke-width="2"/>
-    <text class="legend-txt" x="{{chartW - 5}}" y="{{legY + 4}}">Sin depresion</text>
+    {% set legYo = legY + 4 %}
+    {% set legA = chartW - 150 %}{% set legB = chartW - 130 %}{% set legC = chartW - 125 %}
+    {% set legD = chartW - 30 %}{% set legE = chartW - 10 %}{% set legF = chartW - 5 %}
+    <line x1="{{legA}}" y1="{{legY}}" x2="{{legB}}" y2="{{legY}}" stroke="#2D68C4" stroke-width="2"/>
+    <text class="legend-txt" x="{{legC}}" y="{{legYo}}">Con depresion</text>
+    <line x1="{{legD}}" y1="{{legY}}" x2="{{legE}}" y2="{{legY}}" stroke="#F4C430" stroke-width="2"/>
+    <text class="legend-txt" x="{{legF}}" y="{{legYo}}">Sin depresion</text>
   </g>
 </svg>
