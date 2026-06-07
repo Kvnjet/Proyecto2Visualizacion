@@ -55,8 +55,6 @@
       {% endif %}
     {% endfor %}
 
-    <text class="axis-label" text-anchor="middle"
-          x="{{panelW / 2}}" y="{{panelH + 55}}">Condición</text>
   </g>
 
   {# --- Panel Hombres --- #}
@@ -90,8 +88,6 @@
       {% endif %}
     {% endfor %}
 
-    <text class="axis-label" text-anchor="middle"
-          x="{{panelW / 2}}" y="{{panelH + 55}}">Condición</text>
   </g>
 
   {# Leyenda global #}

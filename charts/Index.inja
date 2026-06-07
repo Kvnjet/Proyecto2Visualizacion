@@ -179,6 +179,7 @@
     <div class="chart-block">
       <img src="{{g.archivo}}" alt="{{g.titulo}}" />
       <p class="chart-caption">Figura {{g.figura}}. {{g.caption}}</p>
+      <p class="chart-caption"><a href="{{g.gist}}" target="_blank">Ver código en Gist →</a></p>
     </div>
     {% endfor %}
   </section>

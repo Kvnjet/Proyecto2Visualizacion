@@ -80,8 +80,6 @@
                 x="235.41666666666669" y="245.715">33.3%</text>
         <rect x="202.45833333333334" y="0" width="65.91666666666667" height="193.43" fill="#F4C430"/>
 
-    <text class="axis-label" text-anchor="middle"
-          x="141.25" y="345">Condición</text>
   </g>
 
   <g transform="translate(397.5,60)">
@@ -149,8 +147,6 @@
                 x="235.41666666666669" y="249.34">30.8%</text>
         <rect x="202.45833333333334" y="0" width="65.91666666666667" height="200.68" fill="#F4C430"/>
 
-    <text class="axis-label" text-anchor="middle"
-          x="141.25" y="345">Condición</text>
   </g>
 
   <rect x="65"      y="389" width="12" height="12" fill="#F4C430"/>

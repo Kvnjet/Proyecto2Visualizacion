@@ -2,7 +2,7 @@
   "titulo": "La Silenciosa Crisis: Salud Mental en Estudiantes Universitarios",
   "subtitulo": "Análisis de variables relacionadas con depresión, ansiedad y rendimiento académico",
   "autores": "Mariana Navarro, Kevin Espinoza",
-  "fecha": "2026-04-12",
+  "fecha": "2026-06-07",
   "introduccion": [
     "En la actualidad, la salud mental universitaria es una preocupación central en el ámbito académico global. Los estudiantes enfrentan presiones académicas, sociales y económicas que pueden desencadenar o agravar condiciones como la depresión, la ansiedad y los ataques de pánico. Sin embargo, este fenómeno rara vez se examina con datos concretos que permitan identificar patrones y grupos vulnerables.",
     "Este análisis exploratorio de datos (EDA) busca responder una pregunta central: ¿Cómo se manifiestan la depresión, la ansiedad y los ataques de pánico entre estudiantes universitarios, y qué factores (como el género, el rendimiento académico o el año de carrera) están asociados a estas condiciones?"
@@ -40,6 +40,7 @@
       "graficas": [
         {
           "archivo": "charts/u3_genero.svg",
+          "gist": "https://gist.github.com/Mariana612/fbe04bd53d4b98089867915bb5ffd485",
           "titulo": "Distribución por Género",
           "figura": 1,
           "caption": "Distribución de estudiantes por género.",
@@ -47,6 +48,7 @@
         },
         {
           "archivo": "charts/u2_cgpa.svg",
+          "gist": "https://gist.github.com/Mariana612/1f95927ae989e2ae622e6b72f7967315",
           "titulo": "Distribución de CGPA",
           "figura": 2,
           "caption": "Distribución de estudiantes por rango de CGPA.",
@@ -54,6 +56,7 @@
         },
         {
           "archivo": "charts/u1_depresion.svg",
+          "gist": "https://gist.github.com/Mariana612/cf1d1f6518ce886ac69c542e609a66e2",
           "titulo": "Distribución de Depresión",
           "figura": 3,
           "caption": "Distribución de estudiantes según presencia de depresión.",
@@ -67,18 +70,21 @@
       "graficas": [
         {
           "archivo": "charts/bi3_dep_genero.svg",
+          "gist": "https://gist.github.com/Mariana612/9c8ddb2a051fa5a5f0f4650458ec3706",
           "titulo": "Depresión y Género",
           "figura": 4,
           "caption": "Relación entre depresión y género de los estudiantes.",
           "analisis": "Al normalizar los datos al 100%, podemos comparar de manera adecuada las diferencias que emergren. El gráfico muestra que las estudiantes de género femenino presentan una mayor proporción de depresión que sus compañeros masculinos. Esta diferencia, aunque puede estar influenciada por la mayor disposición femenina a reportar síntomas, señala que el género es una variable que no puede ignorarse en el diseño de políticas de salud mental universitaria."},
         {
           "archivo": "charts/bi1_cgpa_dep.svg",
+          "gist": "https://gist.github.com/Mariana612/dd6359347f7382e9d4b3b3e742c425df",
           "titulo": "CGPA y Depresión",
           "figura": 5,
           "caption": "Relación entre rango de CGPA y presencia de depresión.",
           "analisis": "Lo que este gráfico revela es que la depresión es más frecuente en los rangos superiores de CGPA. De hecho, la mayor concentración de estudiantes con depresión se da en el rango 3.00 – 3.49, el mismo rango donde se concentra la mayoría de la muestra.En el caso de los rangos de CGPA mas bajo se observa que no se reporta sintomas de depresin. Lo anterior sugiere que el estrés de mantener un buen promedio puede ser tan o más pesado que el de obtener notas bajas."},
         {
           "archivo": "charts/bi2_ansiedad_anio.svg",
+          "gist": "https://gist.github.com/Mariana612/1409e471eb74483b5190f39bc7e3e006",
           "titulo": "Ansiedad y Año Académico",
           "figura": 6,
           "caption": "Niveles de ansiedad según año académico.",
@@ -92,6 +98,7 @@
       "graficas": [
         {
           "archivo": "charts/multi_paralelas.svg",
+          "gist": "https://gist.github.com/Mariana612/70759277298d250658da2a8333e71b3e",
           "titulo": "Coordenadas Paralelas",
           "figura": 7,
           "caption": "Visualización multivariable mediante coordenadas paralelas.",
@@ -104,6 +111,7 @@
       "graficas": [
         {
           "archivo": "charts/facets_genero.svg",
+          "gist": "https://gist.github.com/Mariana612/8374c121dd84e9f482d7150d6916873f",
           "titulo": "Distribución por Género (Facetas)",
           "figura": 8,
           "caption": "Distribución de variables por género mediante facetas.",
