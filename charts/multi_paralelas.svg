@@ -145,24 +145,24 @@
     <line x1="128.0" y1="0.0" x2="136.0" y2="0.0" stroke="#555"/>
     <text class="tick-lbl" x="125.0" y="4.0" text-anchor="end">3.50-4.00</text>
     <line x1="260.0" y1="330.0" x2="268.0" y2="330.0" stroke="#555"/>
-    <text class="tick-lbl" x="257.0" y="334.0" text-anchor="end">No</text>
+    <text class="tick-lbl" x="257.0" y="344.0" text-anchor="end">No</text>
     <line x1="260.0" y1="0.0" x2="268.0" y2="0.0" stroke="#555"/>
-    <text class="tick-lbl" x="257.0" y="4.0" text-anchor="end">Si</text>
+    <text class="tick-lbl" x="257.0" y="-3.0" text-anchor="end">Si</text>
     <line x1="392.0" y1="330.0" x2="400.0" y2="330.0" stroke="#555"/>
-    <text class="tick-lbl" x="389.0" y="334.0" text-anchor="end">No</text>
+    <text class="tick-lbl" x="389.0" y="344.0" text-anchor="end">No</text>
     <line x1="392.0" y1="0.0" x2="400.0" y2="0.0" stroke="#555"/>
-    <text class="tick-lbl" x="389.0" y="4.0" text-anchor="end">Si</text>
+    <text class="tick-lbl" x="389.0" y="-3.0" text-anchor="end">Si</text>
     <line x1="524.0" y1="330.0" x2="532.0" y2="330.0" stroke="#555"/>
-    <text class="tick-lbl" x="521.0" y="334.0" text-anchor="end">No</text>
+    <text class="tick-lbl" x="521.0" y="344.0" text-anchor="end">No</text>
     <line x1="524.0" y1="0.0" x2="532.0" y2="0.0" stroke="#555"/>
-    <text class="tick-lbl" x="521.0" y="4.0" text-anchor="end">Si</text>
+    <text class="tick-lbl" x="521.0" y="-3.0" text-anchor="end">Si</text>
     <line x1="656.0" y1="330.0" x2="664.0" y2="330.0" stroke="#555"/>
-    <text class="tick-lbl" x="653.0" y="334.0" text-anchor="end">No</text>
+    <text class="tick-lbl" x="653.0" y="344.0" text-anchor="end">No</text>
     <line x1="656.0" y1="0.0" x2="664.0" y2="0.0" stroke="#555"/>
-    <text class="tick-lbl" x="653.0" y="4.0" text-anchor="end">Si</text>
-    <line x1="510" y1="360" x2="530" y2="360" stroke="#2D68C4" stroke-width="2"/>
-    <text class="legend-txt" x="535" y="364">Con depresion</text>
-    <line x1="630" y1="360" x2="650" y2="360" stroke="#F4C430" stroke-width="2"/>
-    <text class="legend-txt" x="655" y="364">Sin depresion</text>
+    <text class="tick-lbl" x="653.0" y="-3.0" text-anchor="end">Si</text>
+    <line x1="460" y1="360" x2="480" y2="360" stroke="#2D68C4" stroke-width="2"/>
+    <text class="legend-txt" x="485" y="364">Con depresion</text>
+    <line x1="580" y1="360" x2="600" y2="360" stroke="#F4C430" stroke-width="2"/>
+    <text class="legend-txt" x="605" y="364">Sin depresion</text>
   </g>
 </svg>

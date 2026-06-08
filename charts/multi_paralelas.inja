@@ -91,7 +91,7 @@
     <text class="tick-lbl" x="{{xCGT}}" y="{{tc4o}}" text-anchor="end">3.00-3.49</text>
     <line x1="{{xCGL}}" y1="{{tc5}}" x2="{{xCGR}}" y2="{{tc5}}" stroke="#555"/>
     <text class="tick-lbl" x="{{xCGT}}" y="{{tc5o}}" text-anchor="end">3.50-4.00</text>
-    {% set yNoO = yNo + 4 %}{% set ySiO = ySi + 4 %}
+    {% set yNoO = yNo + 14 %}{% set ySiO = ySi - 3 %}
     <line x1="{{xDepL}}" y1="{{yNo}}" x2="{{xDepR}}" y2="{{yNo}}" stroke="#555"/>
     <text class="tick-lbl" x="{{xDepT}}" y="{{yNoO}}" text-anchor="end">No</text>
     <line x1="{{xDepL}}" y1="{{ySi}}" x2="{{xDepR}}" y2="{{ySi}}" stroke="#555"/>
@@ -110,8 +110,8 @@
     <text class="tick-lbl" x="{{xTraT}}" y="{{ySiO}}" text-anchor="end">Si</text>
     {% set legY = chartH + 30 %}
     {% set legYo = legY + 4 %}
-    {% set legA = chartW - 150 %}{% set legB = chartW - 130 %}{% set legC = chartW - 125 %}
-    {% set legD = chartW - 30 %}{% set legE = chartW - 10 %}{% set legF = chartW - 5 %}
+    {% set legA = chartW - 200 %}{% set legB = chartW - 180 %}{% set legC = chartW - 175 %}
+    {% set legD = chartW - 80 %}{% set legE = chartW - 60 %}{% set legF = chartW - 55 %}
     <line x1="{{legA}}" y1="{{legY}}" x2="{{legB}}" y2="{{legY}}" stroke="#2D68C4" stroke-width="2"/>
     <text class="legend-txt" x="{{legC}}" y="{{legYo}}">Con depresion</text>
     <line x1="{{legD}}" y1="{{legY}}" x2="{{legE}}" y2="{{legY}}" stroke="#F4C430" stroke-width="2"/>
