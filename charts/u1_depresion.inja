@@ -26,6 +26,5 @@
       <text class="bar-label" text-anchor="middle" x="{{bx + bwh}}" y="{{by - 6}}">{{d.Etiqueta}}</text>
     {% endfor %}
     <text class="axis-label" text-anchor="middle" x="{{width / 2}}" y="{{height + 50}}">Presencia de Depresión en el Estudiante</text>
-    <text class="axis-label" text-anchor="middle" transform="rotate(-90)" x="{{-height / 2}}" y="-55">Número de Estudiantes Encuestados</text>
   </g>
 </svg>

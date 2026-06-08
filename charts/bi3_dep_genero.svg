@@ -1,37 +1,88 @@
-<svg width="500" height="400" xmlns="http://www.w3.org/2000/svg">
+
+
+<svg width="500"
+     height="400"
+     xmlns="http://www.w3.org/2000/svg">
   <style>
     .tick-label  { font-family: sans-serif; font-size: 12px; fill: #333; }
+    .axis-line, .tick-line { stroke: #666; }
     .title       { font-family: sans-serif; font-size: 13px; font-weight: bold; fill: #111; }
     .axis-label  { font-family: sans-serif; font-size: 12px; fill: #555; }
     .legend-text { font-family: sans-serif; font-size: 12px; fill: #333; }
     .pct-label   { font-family: sans-serif; font-size: 12px; fill: white; font-weight: bold; }
   </style>
-  <g transform="translate(40,50)">
-    <text class="title" x="175.0" y="-22" text-anchor="middle">Proporcion de Depresion por Genero</text>
-    <g transform="translate(0,280)"><!-- axis orientation=bottom range=[0,350] ticks=2 -->
+
+  <g transform="translate(70,50)">
+
+    <text class="title" x="160.0" y="-22" text-anchor="middle">
+      Proporción de Depresión por Género
+    </text>
+
+    <g transform="translate(0,280)">
+      <!-- axis orientation=bottom range=[0,320] ticks=2 -->
   <g class="axis axis-bottom" transform="translate(0, 0)">
-    <line class="axis-line" x1="0" y1="0" x2="350" y2="0" stroke="currentColor" stroke-width="1"/>
-    <g class="tick" transform="translate(35, 0)">
+    <line class="axis-line" x1="0" y1="0" x2="320" y2="0" stroke="currentColor" stroke-width="1"/>
+    <g class="tick" transform="translate(32, 0)">
       <line class="tick-line" x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="1"/>
       <text class="tick-label" x="0" y="9" text-anchor="middle" dominant-baseline="hanging" dy="0.15em" >Female</text>
     </g>
-    <g class="tick" transform="translate(210, 0)">
+    <g class="tick" transform="translate(192, 0)">
       <line class="tick-line" x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="1"/>
       <text class="tick-label" x="0" y="9" text-anchor="middle" dominant-baseline="hanging" dy="0.15em" >Male</text>
     </g>
   </g>
+
+    </g>
+    <g><!-- axis orientation=left range=[280,0] ticks=5 -->
+  <g class="axis axis-left" transform="translate(0, 0)">
+    <line class="axis-line" x1="0" y1="280" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+    <g class="tick" transform="translate(0, 280)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >0%</text>
+    </g>
+    <g class="tick" transform="translate(0, 210)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >2500%</text>
+    </g>
+    <g class="tick" transform="translate(0, 140)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >5000%</text>
+    </g>
+    <g class="tick" transform="translate(0, 70)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >7500%</text>
+    </g>
+    <g class="tick" transform="translate(0, 0)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >10000%</text>
+    </g>
+  </g>
 </g>
-      <rect x="35.0" y="0" width="105.0" height="280" fill="#F4C430"/>
-      <rect x="35.0" y="171.64" width="105.0" height="108.36000000000001" fill="#2D68C4"/>
-      <text class="pct-label" text-anchor="middle" x="87.5" y="230.82">38.7%</text>
-      <rect x="210.0" y="0" width="105.0" height="280" fill="#F4C430"/>
-      <rect x="210.0" y="215.32" width="105.0" height="64.68" fill="#2D68C4"/>
-      <text class="pct-label" text-anchor="middle" x="262.5" y="252.66">23.1%</text>
-    <text class="axis-label" text-anchor="middle" x="175.0" y="330">Genero</text>
-    <rect x="360" y="0"  width="14" height="14" fill="#F4C430"/>
-    <text class="legend-text" x="378" y="12">No</text>
-    <rect x="360" y="22" width="14" height="14" fill="#2D68C4"/>
-    <text class="legend-text" x="378" y="34">Yes</text>
-    <text class="legend-text" x="360" y="-8" font-weight="bold">Depresion</text>
+
+
+      <rect x="32.0" y="171.64" width="96.0" height="108.36000000000001" fill="#2D68C4"/>
+
+      <text class="pct-label" text-anchor="middle"
+            x="80.0" y="230.82">38.7%</text>
+
+      <rect x="32.0" y="0" width="96.0" height="171.64" fill="#F4C430"/>
+
+      <rect x="192.0" y="215.32" width="96.0" height="64.68" fill="#2D68C4"/>
+
+      <text class="pct-label" text-anchor="middle"
+            x="240.0" y="252.66">23.1%</text>
+
+      <rect x="192.0" y="0" width="96.0" height="215.32" fill="#F4C430"/>
+
+    <text class="axis-label" text-anchor="middle"
+          x="160.0" y="330">Género</text>
+    <text class="axis-label" text-anchor="middle"
+          transform="rotate(-90)" x="140.0" y="-52">Porcentaje</text>
+
+    <rect x="330" y="0"  width="14" height="14" fill="#F4C430"/>
+    <text class="legend-text" x="348" y="12">No</text>
+    <rect x="330" y="22" width="14" height="14" fill="#2D68C4"/>
+    <text class="legend-text" x="348" y="34">Yes</text>
+    <text class="legend-text" x="330" y="-8" font-weight="bold">Depresión</text>
   </g>
 </svg>
