@@ -38,7 +38,7 @@
         <text class="pct-label" text-anchor="middle" x="{{lblX}}" y="{{lblY}}">{{d.PctYes}}%</text>
       {% endif %}
     {% endfor %}
-    <text class="axis-label" text-anchor="middle" x="{{panelW / 2}}" y="{{panelH + 55}}">Condicion</text>
+
   </g>
   {% set panelX1 = padL + panelW + gap %}
   <g transform="translate({{panelX1}},{{padT}})">
@@ -61,7 +61,7 @@
         <text class="pct-label" text-anchor="middle" x="{{lblX}}" y="{{lblY}}">{{d.PctYes}}%</text>
       {% endif %}
     {% endfor %}
-    <text class="axis-label" text-anchor="middle" x="{{panelW / 2}}" y="{{panelH + 55}}">Condicion</text>
+
   </g>
   {% set legX  = padL %}{% set legY  = totalH - 20 %}
   {% set legY2 = legY - 11 %}{% set legX2 = legX + 16 %}
