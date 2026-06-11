@@ -1,17 +1,34 @@
 
 
-<svg width="480" height="420" xmlns="http://www.w3.org/2000/svg">
+<svg width="480" height="420"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:v="https://odviz.org/1.0/">
+  <metadata>
+    <v:table name="genero"
+             description="Distribución de Estudiantes por Género"
+             visualization="chart"
+             columns="id,Genero,Porcentaje,Color">
+      <v:row id="row-0" hrefs="path-0, label-0, pct-0">0,Female,74.3,#DC9DDD</v:row>
+      <v:row id="row-1" hrefs="path-1, label-1, pct-1">1,Male,25.7,#4682B4</v:row>
+    </v:table>
+  </metadata>
   <style>
     .title       { font-family: sans-serif; font-size: 14px; font-weight: bold; fill: #111; }
     .slice-label { font-family: sans-serif; font-size: 13px; fill: white; font-weight: bold; }
   </style>
   <text class="title" x="240" y="28" text-anchor="middle">Distribucion de Estudiantes por Genero</text>
   <g transform="translate(240,215)">
-      <path d="M 8.57253e-15 -140 A 140 140 0 1 1 -139.865 6.15554 L 0 0 Z" fill="#DC9DDD" stroke="white" stroke-width="2"/>
-      <text class="slice-label" x="62.7" y="52.0"  text-anchor="middle">Female</text>
-      <text class="slice-label" x="62.7" y="70.0" text-anchor="middle">74.3%</text>
-      <path d="M -139.865 6.15554 A 140 140 0 0 1 -2.57176e-14 -140 L 0 0 Z" fill="#4682B4" stroke="white" stroke-width="2"/>
-      <text class="slice-label" x="-62.7" y="-68.0"  text-anchor="middle">Male</text>
-      <text class="slice-label" x="-62.7" y="-50.0" text-anchor="middle">25.7%</text>
+      <path id="path-0" href="#row-0"
+            d="M 8.57253e-15 -140 A 140 140 0 1 1 -139.865 6.15554 L 0 0 Z" fill="#DC9DDD" stroke="white" stroke-width="2"/>
+      <text id="label-0" href="#row-0"
+            class="slice-label" x="62.7" y="52.0" text-anchor="middle">Female</text>
+      <text id="pct-0" href="#row-0"
+            class="slice-label" x="62.7" y="70.0" text-anchor="middle">74.3%</text>
+      <path id="path-1" href="#row-1"
+            d="M -139.865 6.15554 A 140 140 0 0 1 -2.57176e-14 -140 L 0 0 Z" fill="#4682B4" stroke="white" stroke-width="2"/>
+      <text id="label-1" href="#row-1"
+            class="slice-label" x="-62.7" y="-68.0" text-anchor="middle">Male</text>
+      <text id="pct-1" href="#row-1"
+            class="slice-label" x="-62.7" y="-50.0" text-anchor="middle">25.7%</text>
   </g>
 </svg>

@@ -1,14 +1,18 @@
 {
   "data": [
     {
+      "id": 0,
       "Depresion": "No",
       "Cantidad": 66,
-      "Etiqueta": "65.3%"
+      "Etiqueta": "65.3%",
+      "Color": "#F4C430"
     },
     {
+      "id": 1,
       "Depresion": "Si",
       "Cantidad": 35,
-      "Etiqueta": "34.7%"
+      "Etiqueta": "34.7%",
+      "Color": "#2D68C4"
     }
   ]
 }

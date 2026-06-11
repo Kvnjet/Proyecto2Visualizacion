@@ -1,6 +1,7 @@
 {
   "data": [
     {
+      "id": 0,
       "Genero": "Female",
       "Porcentaje": 74.3,
       "Color": "#DC9DDD",
@@ -9,6 +10,7 @@
       "LabelY2": 70.0
     },
     {
+      "id": 1,
       "Genero": "Male",
       "Porcentaje": 25.7,
       "Color": "#4682B4",

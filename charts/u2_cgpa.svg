@@ -4,7 +4,21 @@
 
 <svg width="560"
      height="400"
-     xmlns="http://www.w3.org/2000/svg">
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:v="https://odviz.org/1.0/">
+
+  <metadata>
+    <v:table name="Rango CGPA"
+             description="Distribución de Rango CGPA"
+             visualization="chart"
+             columns="ID,CGPA,Cantidad,Color">
+      <v:row id="row-1" hrefs="bar-1, label-1">1,0 - 1.99,4,#F1B972</v:row>
+      <v:row id="row-2" hrefs="bar-2, label-2">2,2.00 - 2.49,2,#FED8B1</v:row>
+      <v:row id="row-3" hrefs="bar-3, label-3">3,2.50 - 2.99,4,#FDAE44</v:row>
+      <v:row id="row-4" hrefs="bar-4, label-4">4,3.00 - 3.49,43,#E77D22</v:row>
+      <v:row id="row-5" hrefs="bar-5, label-5">5,3.50 - 4.00,48,#D16002</v:row>
+    </v:table>
+  </metadata>
   <style>
     .tick-label { font-family: sans-serif; font-size: 11px; fill: #333; }
     .axis-line, .tick-line { stroke: #666; }
@@ -75,35 +89,55 @@
   </g>
 </g>
 
-      <rect x="11.5"
+      <rect id="bar-1" href="#row-1"
+            x="11.5"
             y="250.36363636363637"
             width="69.0"
             height="19.636363636363626"
             fill="#F1B972"/>
-      <rect x="103.5"
+      <text id="label-1" href="#row-1" class="tick-label" text-anchor="middle"
+            x="46.0"
+            y="246.36363636363637">4</text>
+      <rect id="bar-2" href="#row-2"
+            x="103.5"
             y="260.1818181818182"
             width="69.0"
             height="9.818181818181813"
             fill="#FED8B1"/>
-      <rect x="195.5"
+      <text id="label-2" href="#row-2" class="tick-label" text-anchor="middle"
+            x="138.0"
+            y="256.1818181818182">2</text>
+      <rect id="bar-3" href="#row-3"
+            x="195.5"
             y="250.36363636363637"
             width="69.0"
             height="19.636363636363626"
             fill="#FDAE44"/>
-      <rect x="287.5"
+      <text id="label-3" href="#row-3" class="tick-label" text-anchor="middle"
+            x="230.0"
+            y="246.36363636363637">4</text>
+      <rect id="bar-4" href="#row-4"
+            x="287.5"
             y="58.90909090909091"
             width="69.0"
             height="211.0909090909091"
             fill="#E77D22"/>
-      <rect x="379.5"
+      <text id="label-4" href="#row-4" class="tick-label" text-anchor="middle"
+            x="322.0"
+            y="54.90909090909091">43</text>
+      <rect id="bar-5" href="#row-5"
+            x="379.5"
             y="34.363636363636374"
             width="69.0"
             height="235.63636363636363"
             fill="#D16002"/>
+      <text id="label-5" href="#row-5" class="tick-label" text-anchor="middle"
+            x="414.0"
+            y="30.363636363636374">48</text>
 
     <text class="axis-label" text-anchor="middle"
           x="230.0" y="338">Rango de CGPA</text>
     <text class="axis-label" text-anchor="middle"
-          transform="rotate(-90)" x="-135.0" y="-52" style=" #555; : red">Número de Estudiantes</text>
+          transform="rotate(-90)" x="-135.0" y="-52">Número de Estudiantes</text>
   </g>
 </svg>

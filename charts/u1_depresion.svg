@@ -1,4 +1,15 @@
-<svg width="500" height="400" xmlns="http://www.w3.org/2000/svg">
+<svg width="500" height="400"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:v="https://odviz.org/1.0/">
+  <metadata>
+    <v:table name="depresion"
+             description="Distribución de Depresión en Estudiantes Encuestados"
+             visualization="chart"
+             columns="id,Depresion,Cantidad,Etiqueta,Color">
+      <v:row id="row-0" hrefs="bar-0, label-0">0,No,66,65.3%,#F4C430</v:row>
+      <v:row id="row-1" hrefs="bar-1, label-1">1,Si,35,34.7%,#2D68C4</v:row>
+    </v:table>
+  </metadata>
   <style>
     .tick-label { font-family: sans-serif; font-size: 12px; fill: #333; }
     .bar-label { font-family: sans-serif; font-size: 13px; fill: #333; }
@@ -61,10 +72,10 @@
     </g>
   </g>
 </g>
-      <rect x="44.43749999999999" y="49.0" width="108.62500000000001" height="231.0" fill="#F4C430"/>
-      <text class="bar-label" text-anchor="middle" x="98.75" y="43.0">65.3%</text>
-      <rect x="241.9375" y="157.5" width="108.62500000000001" height="122.5" fill="#2D68C4"/>
-      <text class="bar-label" text-anchor="middle" x="296.25" y="151.5">34.7%</text>
+      <rect id="bar-0" href="#row-0" x="44.43749999999999" y="49.0" width="108.62500000000001" height="231.0" fill="#F4C430"/>
+      <text id="label-0" href="#row-0" class="bar-label" text-anchor="middle" x="98.75" y="43.0">65.3%</text>
+      <rect id="bar-1" href="#row-1" x="241.9375" y="157.5" width="108.62500000000001" height="122.5" fill="#2D68C4"/>
+      <text id="label-1" href="#row-1" class="bar-label" text-anchor="middle" x="296.25" y="151.5">34.7%</text>
     <text class="axis-label" text-anchor="middle" x="197.5" y="330">Presencia de Depresión en el Estudiante</text>
   </g>
 </svg>

@@ -16,7 +16,19 @@
 
 <svg width="{{width + margin.left + margin.right}}"
      height="{{height + margin.top + margin.bottom}}"
-     xmlns="http://www.w3.org/2000/svg">
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:v="https://odviz.org/1.0/">
+
+  <metadata>
+    <v:table name="Rango CGPA"
+             description="Distribución de Rango CGPA"
+             visualization="chart"
+             columns="ID,CGPA,Cantidad,Color">
+      {% for d in data %}
+      <v:row id="row-{{d.ID}}" hrefs="bar-{{d.ID}}, label-{{d.ID}}">{{d.ID}},{{d.CGPA}},{{d.Cantidad}},{{d.Color}}</v:row>
+      {% endfor %}
+    </v:table>
+  </metadata>
   <style>
     .tick-label { font-family: sans-serif; font-size: 11px; fill: #333; }
     .axis-line, .tick-line { stroke: #666; }
@@ -36,16 +48,20 @@
     <g>{{ call(axisLeft(y) | tickCount(6)) }}</g>
 
     {% for d in data %}
-      <rect x="{{ scale(x, d.CGPA) }}"
+      <rect id="bar-{{d.ID}}" href="#row-{{d.ID}}"
+            x="{{ scale(x, d.CGPA) }}"
             y="{{ scale(y, d.Cantidad) }}"
             width="{{ bandwidth(x) }}"
             height="{{ height - scale(y, d.Cantidad) }}"
             fill="{{ d.Color }}"/>
+      <text id="label-{{d.ID}}" href="#row-{{d.ID}}" class="tick-label" text-anchor="middle"
+            x="{{ scale(x, d.CGPA) + bandwidth(x) / 2 }}"
+            y="{{ scale(y, d.Cantidad) - 4 }}">{{d.Cantidad}}</text>
     {% endfor %}
 
     <text class="axis-label" text-anchor="middle"
           x="{{width / 2}}" y="{{height + 68}}">Rango de CGPA</text>
     <text class="axis-label" text-anchor="middle"
-          transform="rotate(-90)" x="{{0 - height / 2}}" y="-52" style=" #555; : red">Número de Estudiantes</text>
+          transform="rotate(-90)" x="{{0 - height / 2}}" y="-52">Número de Estudiantes</text>
   </g>
 </svg>
