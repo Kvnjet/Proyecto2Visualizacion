@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visualizaciones Interactivas — Salud Mental Universitaria</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: sans-serif;
+      background: #f5f5f5;
+      color: #222;
+      padding: 2rem;
+    }
+
+    header {
+      max-width: 960px;
+      margin: 0 auto 2rem;
+    }
+    header h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+    header p {
+      font-size: 0.88rem;
+      color: #777;
+    }
+
+    h2 {
+      max-width: 960px;
+      margin: 2rem auto 0.8rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #888;
+    }
+
+    .grid {
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    a.card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.15s, border-color 0.15s;
+    }
+    a.card:hover {
+      box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+      border-color: #0070c0;
+    }
+
+    .card-preview {
+      background: #fafafa;
+      border-bottom: 1px solid #eee;
+      height: 130px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.6rem;
+      overflow: hidden;
+    }
+    .card-preview img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .card-body {
+      padding: 0.7rem 0.9rem 0.9rem;
+    }
+    .card-body .tag {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #aaa;
+      margin-bottom: 0.2rem;
+    }
+    .card-body h3 {
+      font-size: 0.88rem;
+      font-weight: 600;
+      line-height: 1.35;
+      color: #111;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Salud Mental en Estudiantes Universitarios</h1>
+    <p>Visualizaciones interactivas — haz clic en cualquier gráfica para explorar los datos</p>
+  </header>
+
+  <h2>Univariable</h2>
+  <div class="grid">
+    <a class="card" href="u3_genero.html">
+      <div class="card-preview"><img src="../charts/u3_genero.svg" alt="Género" /></div>
+      <div class="card-body">
+        <p class="tag">Univariable</p>
+        <h3>Distribución por Género</h3>
+      </div>
+    </a>
+    <a class="card" href="u2_cgpa.html">
+      <div class="card-preview"><img src="../charts/u2_cgpa.svg" alt="CGPA" /></div>
+      <div class="card-body">
+        <p class="tag">Univariable</p>
+        <h3>Distribución por Rango de CGPA</h3>
+      </div>
+    </a>
+    <a class="card" href="u1_depresion.html">
+      <div class="card-preview"><img src="../charts/u1_depresion.svg" alt="Depresión" /></div>
+      <div class="card-body">
+        <p class="tag">Univariable</p>
+        <h3>Distribución de Depresión</h3>
+      </div>
+    </a>
+  </div>
+
+  <h2>Bivariable</h2>
+  <div class="grid">
+    <a class="card" href="bi3_dep_genero.html">
+      <div class="card-preview"><img src="../charts/bi3_dep_genero.svg" alt="Depresión y Género" /></div>
+      <div class="card-body">
+        <p class="tag">Bivariable</p>
+        <h3>Proporción de Depresión por Género</h3>
+      </div>
+    </a>
+    <a class="card" href="bi1_cgpa_dep.html">
+      <div class="card-preview"><img src="../charts/bi1_cgpa_dep.svg" alt="CGPA y Depresión" /></div>
+      <div class="card-body">
+        <p class="tag">Bivariable</p>
+        <h3>Relación entre CGPA y Depresión</h3>
+      </div>
+    </a>
+    <a class="card" href="bi2_ansiedad_anio.html">
+      <div class="card-preview"><img src="../charts/bi2_ansiedad_anio.svg" alt="Ansiedad y Año" /></div>
+      <div class="card-body">
+        <p class="tag">Bivariable</p>
+        <h3>Ansiedad por Año de Estudio</h3>
+      </div>
+    </a>
+  </div>
+
+  <h2>Multivariable y Facetas</h2>
+  <div class="grid">
+    <a class="card" href="multi_paralelas.html">
+      <div class="card-preview"><img src="../charts/multi_paralelas.svg" alt="Coordenadas Paralelas" /></div>
+      <div class="card-body">
+        <p class="tag">Multivariable</p>
+        <h3>Perfil Multidimensional — Coordenadas Paralelas</h3>
+      </div>
+    </a>
+    <a class="card" href="facets_genero.html">
+      <div class="card-preview"><img src="../charts/facets_genero.svg" alt="Facetas por Género" /></div>
+      <div class="card-body">
+        <p class="tag">Facetas</p>
+        <h3>Condiciones de Salud Mental por Género</h3>
+      </div>
+    </a>
+  </div>
+
+</body>
+</html>
