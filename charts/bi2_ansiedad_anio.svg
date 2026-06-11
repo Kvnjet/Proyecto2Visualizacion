@@ -2,7 +2,19 @@
 
 <svg width="560"
      height="400"
-     xmlns="http://www.w3.org/2000/svg">
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:v="https://odviz.org/1.0/">
+  <metadata>
+    <v:table name="ansiedad_anio"
+             description="Relación entre Ansiedad y Año de Estudio"
+             visualization="chart"
+             columns="id,Anio,CantNo,CantYes">
+      <v:row id="row-0" hrefs="barNo-0, barYes-0">0,Año 1,29,14</v:row>
+      <v:row id="row-1" hrefs="barNo-1, barYes-1">1,Año 2,16,10</v:row>
+      <v:row id="row-2" hrefs="barNo-2, barYes-2">2,Año 3,16,8</v:row>
+      <v:row id="row-3" hrefs="barNo-3, barYes-3">3,Año 4,6,2</v:row>
+    </v:table>
+  </metadata>
   <style>
     .tick-label  { font-family: sans-serif; font-size: 12px; fill: #333; }
     .axis-line, .tick-line { stroke: #666; }
@@ -79,35 +91,43 @@
 </g>
 
 
-      <rect x="14.25" y="47.99999999999997"
+      <rect id="barNo-0" href="#row-0"
+            x="14.25" y="47.99999999999997"
             width="32.25" height="232.00000000000003"
             fill="#F4C430"/>
 
-      <rect x="47.5" y="168.0"
+      <rect id="barYes-0" href="#row-0"
+            x="47.5" y="168.0"
             width="32.25" height="112.0"
             fill="#2D68C4"/>
 
-      <rect x="109.25" y="152.0"
+      <rect id="barNo-1" href="#row-1"
+            x="109.25" y="152.0"
             width="32.25" height="128.0"
             fill="#F4C430"/>
 
-      <rect x="142.5" y="200.0"
+      <rect id="barYes-1" href="#row-1"
+            x="142.5" y="200.0"
             width="32.25" height="80.0"
             fill="#2D68C4"/>
 
-      <rect x="204.25" y="152.0"
+      <rect id="barNo-2" href="#row-2"
+            x="204.25" y="152.0"
             width="32.25" height="128.0"
             fill="#F4C430"/>
 
-      <rect x="237.5" y="216.0"
+      <rect id="barYes-2" href="#row-2"
+            x="237.5" y="216.0"
             width="32.25" height="64.0"
             fill="#2D68C4"/>
 
-      <rect x="299.25" y="232.0"
+      <rect id="barNo-3" href="#row-3"
+            x="299.25" y="232.0"
             width="32.25" height="48.0"
             fill="#F4C430"/>
 
-      <rect x="332.5" y="264.0"
+      <rect id="barYes-3" href="#row-3"
+            x="332.5" y="264.0"
             width="32.25" height="16.0"
             fill="#2D68C4"/>
 

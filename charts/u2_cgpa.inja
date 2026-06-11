@@ -61,7 +61,5 @@
 
     <text class="axis-label" text-anchor="middle"
           x="{{width / 2}}" y="{{height + 68}}">Rango de CGPA</text>
-    <text class="axis-label" text-anchor="middle"
-          transform="rotate(-90)" x="{{0 - height / 2}}" y="-52">Número de Estudiantes</text>
   </g>
 </svg>

@@ -8,7 +8,19 @@
 {% set panelW  = (totalW - padL - padR - gap) / 2 %}
 {% set panelH  = totalH - padT - padB %}
 {% set cats = ["Ansiedad","Depresion","Panico"] %}
-<svg width="{{totalW}}" height="{{totalH}}" xmlns="http://www.w3.org/2000/svg">
+<svg width="{{totalW}}" height="{{totalH}}"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:v="https://odviz.org/1.0/">
+  <metadata>
+    <v:table name="facets_genero"
+             description="Condiciones de Salud Mental por Género"
+             visualization="chart"
+             columns="id,Genero,Condicion,PctYes,PctNo">
+      {% for d in data %}
+      <v:row id="row-{{d.id}}" hrefs="barNo-{{d.id}}, barYes-{{d.id}}, label-{{d.id}}">{{d.id}},{{d.Genero}},{{d.Condicion}},{{d.PctYes}},{{d.PctNo}}</v:row>
+      {% endfor %}
+    </v:table>
+  </metadata>
   <style>
     .title       { font-family: sans-serif; font-size: 14px; font-weight: bold; fill: #111; }
     .panel-title { font-family: sans-serif; font-size: 13px; font-weight: bold; fill: #333; }
@@ -27,18 +39,18 @@
       {% if d.Genero == "Mujeres" %}
         {% set bx   = scale(x0, d.Condicion) %}
         {% set bw   = bandwidth(x0) %}
-        {% set bwh  = bw / 2 %}
         {% set yTop = scale(y0, d.PctYes) %}
         {% set hYes = panelH - yTop %}
-        {% set hYsh = hYes / 2 %}
-        {% set lblX = bx + bwh %}
-        {% set lblY = yTop + hYsh + 4 %}
-        <rect x="{{bx}}" y="0" width="{{bw}}" height="{{panelH}}" fill="#F4C430"/>
-        <rect x="{{bx}}" y="{{yTop}}" width="{{bw}}" height="{{hYes}}" fill="#2D68C4"/>
-        <text class="pct-label" text-anchor="middle" x="{{lblX}}" y="{{lblY}}">{{d.PctYes}}%</text>
+        {% set lblX = bx + bw / 2 %}
+        {% set lblY = yTop + hYes / 2 + 4 %}
+        <rect id="barNo-{{d.id}}" href="#row-{{d.id}}"
+              x="{{bx}}" y="0" width="{{bw}}" height="{{panelH}}" fill="#F4C430"/>
+        <rect id="barYes-{{d.id}}" href="#row-{{d.id}}"
+              x="{{bx}}" y="{{yTop}}" width="{{bw}}" height="{{hYes}}" fill="#2D68C4"/>
+        <text id="label-{{d.id}}" href="#row-{{d.id}}"
+              class="pct-label" text-anchor="middle" x="{{lblX}}" y="{{lblY}}">{{d.PctYes}}%</text>
       {% endif %}
     {% endfor %}
-
   </g>
   {% set panelX1 = padL + panelW + gap %}
   <g transform="translate({{panelX1}},{{padT}})">
@@ -50,18 +62,18 @@
       {% if d.Genero == "Hombres" %}
         {% set bx   = scale(x1, d.Condicion) %}
         {% set bw   = bandwidth(x1) %}
-        {% set bwh  = bw / 2 %}
         {% set yTop = scale(y1, d.PctYes) %}
         {% set hYes = panelH - yTop %}
-        {% set hYsh = hYes / 2 %}
-        {% set lblX = bx + bwh %}
-        {% set lblY = yTop + hYsh + 4 %}
-        <rect x="{{bx}}" y="0" width="{{bw}}" height="{{panelH}}" fill="#F4C430"/>
-        <rect x="{{bx}}" y="{{yTop}}" width="{{bw}}" height="{{hYes}}" fill="#2D68C4"/>
-        <text class="pct-label" text-anchor="middle" x="{{lblX}}" y="{{lblY}}">{{d.PctYes}}%</text>
+        {% set lblX = bx + bw / 2 %}
+        {% set lblY = yTop + hYes / 2 + 4 %}
+        <rect id="barNo-{{d.id}}" href="#row-{{d.id}}"
+              x="{{bx}}" y="0" width="{{bw}}" height="{{panelH}}" fill="#F4C430"/>
+        <rect id="barYes-{{d.id}}" href="#row-{{d.id}}"
+              x="{{bx}}" y="{{yTop}}" width="{{bw}}" height="{{hYes}}" fill="#2D68C4"/>
+        <text id="label-{{d.id}}" href="#row-{{d.id}}"
+              class="pct-label" text-anchor="middle" x="{{lblX}}" y="{{lblY}}">{{d.PctYes}}%</text>
       {% endif %}
     {% endfor %}
-
   </g>
   {% set legX  = padL %}{% set legY  = totalH - 20 %}
   {% set legY2 = legY - 11 %}{% set legX2 = legX + 16 %}

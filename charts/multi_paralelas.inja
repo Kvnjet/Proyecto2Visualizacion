@@ -19,7 +19,19 @@
 {% set ySi = scale(yBin, 1) %}
 {% set tk = 4 %}
 {% set tko = 7 %}
-<svg width="{{totalW}}" height="{{totalH}}" xmlns="http://www.w3.org/2000/svg">
+<svg width="{{totalW}}" height="{{totalH}}"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:v="https://odviz.org/1.0/">
+  <metadata>
+    <v:table name="multi_paralelas"
+             description="Perfil Multidimensional del Estudiante"
+             visualization="chart"
+             columns="id,Edad,CGPA_val,Depresion,Ansiedad,Panico,Tratamiento,Color,Opacity">
+      {% for d in data %}
+      <v:row id="row-{{d.id}}" hrefs="line-{{d.id}}">{{d.id}},{{d.Edad}},{{d.CGPA_val}},{{d.Depresion}},{{d.Ansiedad}},{{d.Panico}},{{d.Tratamiento}},{{d.Color}},{{d.Opacity}}</v:row>
+      {% endfor %}
+    </v:table>
+  </metadata>
   <style>
     .title      { font-family: sans-serif; font-size: 14px; font-weight: bold; fill: #111; }
     .axis-title { font-family: sans-serif; font-size: 12px; fill: #333; font-weight: bold; }
@@ -35,7 +47,9 @@
       {% set pAns = scale(yBin, d.Ansiedad) %}
       {% set pPan = scale(yBin, d.Panico) %}
       {% set pTra = scale(yBin, d.Tratamiento) %}
-      <polyline points="{{xEd}},{{pEd}} {{xCG}},{{pCG}} {{xDep}},{{pDep}} {{xAns}},{{pAns}} {{xPan}},{{pPan}} {{xTra}},{{pTra}}" stroke="{{d.Color}}" stroke-width="1.2" fill="none" opacity="{{d.Opacity}}"/>
+      <polyline id="line-{{d.id}}" href="#row-{{d.id}}"
+                points="{{xEd}},{{pEd}} {{xCG}},{{pCG}} {{xDep}},{{pDep}} {{xAns}},{{pAns}} {{xPan}},{{pPan}} {{xTra}},{{pTra}}"
+                stroke="{{d.Color}}" stroke-width="1.2" fill="none" opacity="{{d.Opacity}}"/>
     {% endfor %}
     <line x1="{{xEd}}"  y1="0" x2="{{xEd}}"  y2="{{chartH}}" stroke="#555" stroke-width="1.5"/>
     <line x1="{{xCG}}"  y1="0" x2="{{xCG}}"  y2="{{chartH}}" stroke="#555" stroke-width="1.5"/>

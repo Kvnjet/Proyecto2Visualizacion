@@ -1,4 +1,19 @@
-<svg width="700" height="420" xmlns="http://www.w3.org/2000/svg">
+<svg width="700" height="420"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:v="https://odviz.org/1.0/">
+  <metadata>
+    <v:table name="facets_genero"
+             description="Condiciones de Salud Mental por Género"
+             visualization="chart"
+             columns="id,Genero,Condicion,PctYes,PctNo">
+      <v:row id="row-0" hrefs="barNo-0, barYes-0, label-0">0,Mujeres,Ansiedad,32.0,68.0</v:row>
+      <v:row id="row-1" hrefs="barNo-1, barYes-1, label-1">1,Mujeres,Depresion,38.7,61.3</v:row>
+      <v:row id="row-2" hrefs="barNo-2, barYes-2, label-2">2,Mujeres,Panico,33.3,66.7</v:row>
+      <v:row id="row-3" hrefs="barNo-3, barYes-3, label-3">3,Hombres,Ansiedad,38.5,61.5</v:row>
+      <v:row id="row-4" hrefs="barNo-4, barYes-4, label-4">4,Hombres,Depresion,23.1,76.9</v:row>
+      <v:row id="row-5" hrefs="barNo-5, barYes-5, label-5">5,Hombres,Panico,30.8,69.2</v:row>
+    </v:table>
+  </metadata>
   <style>
     .title       { font-family: sans-serif; font-size: 14px; font-weight: bold; fill: #111; }
     .panel-title { font-family: sans-serif; font-size: 13px; font-weight: bold; fill: #333; }
@@ -27,16 +42,24 @@
     </g>
   </g>
 </g>
-        <rect x="15.0" y="0" width="70.0" height="290" fill="#F4C430"/>
-        <rect x="15.0" y="197.2" width="70.0" height="92.80000000000001" fill="#2D68C4"/>
-        <text class="pct-label" text-anchor="middle" x="50.0" y="247.6">32.0%</text>
-        <rect x="115.0" y="0" width="70.0" height="290" fill="#F4C430"/>
-        <rect x="115.0" y="177.76999999999998" width="70.0" height="112.23000000000002" fill="#2D68C4"/>
-        <text class="pct-label" text-anchor="middle" x="150.0" y="237.885">38.7%</text>
-        <rect x="215.0" y="0" width="70.0" height="290" fill="#F4C430"/>
-        <rect x="215.0" y="193.43" width="70.0" height="96.57" fill="#2D68C4"/>
-        <text class="pct-label" text-anchor="middle" x="250.0" y="245.715">33.3%</text>
-
+        <rect id="barNo-0" href="#row-0"
+              x="15.0" y="0" width="70.0" height="290" fill="#F4C430"/>
+        <rect id="barYes-0" href="#row-0"
+              x="15.0" y="197.2" width="70.0" height="92.80000000000001" fill="#2D68C4"/>
+        <text id="label-0" href="#row-0"
+              class="pct-label" text-anchor="middle" x="50.0" y="247.6">32.0%</text>
+        <rect id="barNo-1" href="#row-1"
+              x="115.0" y="0" width="70.0" height="290" fill="#F4C430"/>
+        <rect id="barYes-1" href="#row-1"
+              x="115.0" y="177.76999999999998" width="70.0" height="112.23000000000002" fill="#2D68C4"/>
+        <text id="label-1" href="#row-1"
+              class="pct-label" text-anchor="middle" x="150.0" y="237.885">38.7%</text>
+        <rect id="barNo-2" href="#row-2"
+              x="215.0" y="0" width="70.0" height="290" fill="#F4C430"/>
+        <rect id="barYes-2" href="#row-2"
+              x="215.0" y="193.43" width="70.0" height="96.57" fill="#2D68C4"/>
+        <text id="label-2" href="#row-2"
+              class="pct-label" text-anchor="middle" x="250.0" y="245.715">33.3%</text>
   </g>
   <g transform="translate(380.0,60)">
     <text class="panel-title" x="150.0" y="-10" text-anchor="middle">Hombres</text>
@@ -57,16 +80,24 @@
     </g>
   </g>
 </g>
-        <rect x="15.0" y="0" width="70.0" height="290" fill="#F4C430"/>
-        <rect x="15.0" y="178.35" width="70.0" height="111.65" fill="#2D68C4"/>
-        <text class="pct-label" text-anchor="middle" x="50.0" y="238.175">38.5%</text>
-        <rect x="115.0" y="0" width="70.0" height="290" fill="#F4C430"/>
-        <rect x="115.0" y="223.01" width="70.0" height="66.99000000000001" fill="#2D68C4"/>
-        <text class="pct-label" text-anchor="middle" x="150.0" y="260.505">23.1%</text>
-        <rect x="215.0" y="0" width="70.0" height="290" fill="#F4C430"/>
-        <rect x="215.0" y="200.68" width="70.0" height="89.32" fill="#2D68C4"/>
-        <text class="pct-label" text-anchor="middle" x="250.0" y="249.34">30.8%</text>
-
+        <rect id="barNo-3" href="#row-3"
+              x="15.0" y="0" width="70.0" height="290" fill="#F4C430"/>
+        <rect id="barYes-3" href="#row-3"
+              x="15.0" y="178.35" width="70.0" height="111.65" fill="#2D68C4"/>
+        <text id="label-3" href="#row-3"
+              class="pct-label" text-anchor="middle" x="50.0" y="238.175">38.5%</text>
+        <rect id="barNo-4" href="#row-4"
+              x="115.0" y="0" width="70.0" height="290" fill="#F4C430"/>
+        <rect id="barYes-4" href="#row-4"
+              x="115.0" y="223.01" width="70.0" height="66.99000000000001" fill="#2D68C4"/>
+        <text id="label-4" href="#row-4"
+              class="pct-label" text-anchor="middle" x="150.0" y="260.505">23.1%</text>
+        <rect id="barNo-5" href="#row-5"
+              x="215.0" y="0" width="70.0" height="290" fill="#F4C430"/>
+        <rect id="barYes-5" href="#row-5"
+              x="215.0" y="200.68" width="70.0" height="89.32" fill="#2D68C4"/>
+        <text id="label-5" href="#row-5"
+              class="pct-label" text-anchor="middle" x="250.0" y="249.34">30.8%</text>
   </g>
   <rect x="30"  y="389" width="12" height="12" fill="#F4C430"/>
   <text class="legend-text" x="46" y="400">No</text>

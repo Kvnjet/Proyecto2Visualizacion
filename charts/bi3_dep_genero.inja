@@ -4,7 +4,20 @@
 {% set cats = ["Female","Male"] %}
 {% set x = scaleBand() | domain(cats) | range(0, width) | padding(0.4) %}
 {% set y = scaleLinear() | domain([0, 100]) | range(height, 0) %}
-<svg width="{{width + margin.left + margin.right}}" height="{{height + margin.top + margin.bottom}}" xmlns="http://www.w3.org/2000/svg">
+
+<svg width="{{width + margin.left + margin.right}}" height="{{height + margin.top + margin.bottom}}"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:v="https://odviz.org/1.0/">
+  <metadata>
+    <v:table name="depresion_genero"
+             description="Proporción de Depresión por Género"
+             visualization="chart"
+             columns="id,Genero,PctYes,PctNo">
+      {% for d in data %}
+      <v:row id="row-{{d.id}}" hrefs="barNo-{{d.id}}, barYes-{{d.id}}, label-{{d.id}}">{{d.id}},{{d.Genero}},{{d.PctYes}},{{d.PctNo}}</v:row>
+      {% endfor %}
+    </v:table>
+  </metadata>
   <style>
     .tick-label  { font-family: sans-serif; font-size: 12px; fill: #333; }
     .title       { font-family: sans-serif; font-size: 13px; font-weight: bold; fill: #111; }
@@ -21,12 +34,15 @@
       {% set bwh  = bw / 2 %}
       {% set yYes = scale(y, d.PctYes) %}
       {% set hYes = height - scale(y, d.PctYes) %}
-      {% set hYsh = hYes / 2 %}
       {% set lblX = bx + bwh %}
-      {% set lblY = yYes + hYsh + 5 %}
-      <rect x="{{bx}}" y="0" width="{{bw}}" height="{{height}}" fill="#F4C430"/>
-      <rect x="{{bx}}" y="{{yYes}}" width="{{bw}}" height="{{hYes}}" fill="#2D68C4"/>
-      <text class="pct-label" text-anchor="middle" x="{{lblX}}" y="{{lblY}}">{{d.PctYes}}%</text>
+      {% set lblY = yYes + hYes / 2 + 5 %}
+
+      <rect id="barNo-{{d.id}}" href="#row-{{d.id}}"
+            x="{{bx}}" y="0" width="{{bw}}" height="{{height}}" fill="#F4C430"/>
+      <rect id="barYes-{{d.id}}" href="#row-{{d.id}}"
+            x="{{bx}}" y="{{yYes}}" width="{{bw}}" height="{{hYes}}" fill="#2D68C4"/>
+      <text id="label-{{d.id}}" href="#row-{{d.id}}"
+            class="pct-label" text-anchor="middle" x="{{lblX}}" y="{{lblY}}">{{d.PctYes}}%</text>
     {% endfor %}
     <text class="axis-label" text-anchor="middle" x="{{width / 2}}" y="{{height + 50}}">Genero</text>
     {% set legW  = width + 10 %}

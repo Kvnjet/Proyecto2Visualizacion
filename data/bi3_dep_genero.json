@@ -1,14 +1,6 @@
 {
   "data": [
-    {
-      "Genero": "Female",
-      "PctYes": 38.7,
-      "PctNo": 61.3
-    },
-    {
-      "Genero": "Male",
-      "PctYes": 23.1,
-      "PctNo": 76.9
-    }
+    { "id": 0, "Genero": "Female", "PctYes": 38.7, "PctNo": 61.3 },
+    { "id": 1, "Genero": "Male",   "PctYes": 23.1, "PctNo": 76.9 }
   ]
 }

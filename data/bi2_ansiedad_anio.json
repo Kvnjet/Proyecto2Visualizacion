@@ -1,24 +1,8 @@
 {
   "data": [
-    {
-      "Anio": "Año 1",
-      "CantNo": 29,
-      "CantYes": 14
-    },
-    {
-      "Anio": "Año 2",
-      "CantNo": 16,
-      "CantYes": 10
-    },
-    {
-      "Anio": "Año 3",
-      "CantNo": 16,
-      "CantYes": 8
-    },
-    {
-      "Anio": "Año 4",
-      "CantNo": 6,
-      "CantYes": 2
-    }
+    { "id": 0, "Anio": "Año 1", "CantNo": 29, "CantYes": 14 },
+    { "id": 1, "Anio": "Año 2", "CantNo": 16, "CantYes": 10 },
+    { "id": 2, "Anio": "Año 3", "CantNo": 16, "CantYes": 8  },
+    { "id": 3, "Anio": "Año 4", "CantNo": 6,  "CantYes": 2  }
   ]
 }
